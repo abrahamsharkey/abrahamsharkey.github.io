@@ -35,17 +35,17 @@
     }
 
     a:hover {
-      opacity: 0.8;
+      opacity: 0.85;
     }
 
     .container {
       max-width: 1000px;
       margin: 0 auto;
-      padding: 3rem 1.5rem;
+      padding: 2.5rem 1.5rem;
     }
 
     section {
-      margin-top: 3.5rem;
+      margin-top: 3rem;
     }
 
     /* HERO */
@@ -54,7 +54,7 @@
       grid-template-columns: 1.2fr 0.8fr;
       gap: 3rem;
       align-items: center;
-      min-height: 75vh;
+      min-height: 60vh; /* reduced for tighter layout */
     }
 
     .hero h1 {
@@ -63,22 +63,23 @@
     }
 
     .hero p {
-      margin: 0.5rem 0;
+      margin: 0.4rem 0;
       color: var(--muted);
       max-width: 520px;
     }
 
     .hero-links {
-      margin-top: 1.5rem;
+      margin-top: 1.3rem;
       display: flex;
       gap: 1.5rem;
     }
 
     .hero img {
       width: 100%;
-      max-width: 320px;
+      max-width: 300px;
       border-radius: 14px;
       border: 1px solid var(--border);
+      background: var(--bg); /* softens white background */
       justify-self: end;
     }
 
@@ -96,11 +97,11 @@
     }
 
     .project {
-      margin-bottom: 1.3rem;
+      margin-bottom: 1.2rem;
     }
 
     .project h3 {
-      margin: 0 0 0.3rem 0;
+      margin: 0 0 0.25rem 0;
       font-size: 1.1rem;
     }
 
@@ -110,8 +111,8 @@
     }
 
     footer {
-      margin-top: 5rem;
-      padding: 2rem 0;
+      margin-top: 4.5rem;
+      padding: 2rem 0 1rem;
       text-align: center;
       color: var(--muted);
       font-size: 0.9rem;
@@ -136,16 +137,16 @@
 
   <main class="container">
 
-    <!-- HOME / HERO -->
+    <!-- HERO / HOME -->
     <section class="hero">
       <div>
         <h1>Abraham Sharkey</h1>
         <p><strong>Computer Science Student</strong></p>
 
         <p>
-          Interested in <strong>Cyber Security</strong>, <strong>Cryptography</strong>,
-          and <strong>Quantum Computing</strong>. Analytical problem-solver with a strong
-          interest in secure systems and emerging technologies.
+          Interested in <strong>Cyber Security</strong>, <strong>Cryptography</strong>, and
+          <strong>Quantum Computing</strong>. Analytical problem-solver with a strong
+          interest in secure systems and next-generation computing.
         </p>
 
         <div class="hero-links">
