@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Abraham Sharkey | Computer Science</title>
 
-  <meta name="description" content="Computer Science student interested in Cyber Security, Cryptography, and Quantum Computing." />
+  <meta name="description" content="Computer Science student focused on Cyber Security, Cryptography, and Quantum Computing." />
 
   <style>
     :root {
@@ -16,9 +16,7 @@
       --border: #1f2937;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -34,66 +32,65 @@
       border-bottom: 1px solid var(--border);
     }
 
-    a:hover {
-      opacity: 0.85;
-    }
+    a:hover { opacity: 0.85; }
 
     .container {
-      max-width: 1000px;
+      max-width: 900px;
       margin: 0 auto;
       padding: 2.5rem 1.5rem;
     }
 
-    section {
-      margin-top: 3rem;
-    }
+    section { margin-top: 2.5rem; }
 
     /* HERO */
     .hero {
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
+      grid-template-columns: 1.3fr 0.7fr;
       gap: 3rem;
       align-items: center;
-      min-height: 60vh; /* reduced for tighter layout */
+      min-height: 55vh;
     }
 
-    .hero h1 {
-      font-size: 3rem;
-      margin: 0 0 0.5rem 0;
+    h1 {
+      font-size: 2.6rem;
+      margin: 0 0 0.4rem 0;
     }
 
-    .hero p {
-      margin: 0.4rem 0;
-      color: var(--muted);
-      max-width: 520px;
-    }
+    p { margin: 0.4rem 0; color: var(--muted); }
 
     .hero-links {
-      margin-top: 1.3rem;
+      margin-top: 1.2rem;
       display: flex;
-      gap: 1.5rem;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      padding: 0.45rem 0.8rem;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 0.9rem;
     }
 
     .hero img {
       width: 100%;
-      max-width: 300px;
-      border-radius: 14px;
+      max-width: 260px;
+      border-radius: 12px;
       border: 1px solid var(--border);
-      background: var(--bg); /* softens white background */
+      background: var(--bg);
       justify-self: end;
     }
 
     h2 {
-      font-size: 1.6rem;
-      margin-bottom: 1rem;
+      font-size: 1.4rem;
+      margin-bottom: 0.8rem;
     }
 
-    .card {
+    .block {
       background: var(--bg-soft);
       border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 1.5rem;
-      max-width: 760px;
+      border-radius: 12px;
+      padding: 1.3rem;
     }
 
     .project {
@@ -101,119 +98,115 @@
     }
 
     .project h3 {
-      margin: 0 0 0.25rem 0;
-      font-size: 1.1rem;
+      margin: 0 0 0.2rem 0;
+      font-size: 1.05rem;
     }
 
     .project p {
-      margin: 0;
+      margin: 0.2rem 0 0.4rem 0;
       color: var(--muted);
+    }
+
+    .project a {
+      font-size: 0.85rem;
     }
 
     footer {
-      margin-top: 4.5rem;
-      padding: 2rem 0 1rem;
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.9rem;
+      margin-top: 4rem;
+      padding-top: 1.5rem;
       border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--muted);
     }
 
     @media (max-width: 900px) {
-      .hero {
-        grid-template-columns: 1fr;
-        min-height: auto;
-      }
-
-      .hero img {
-        justify-self: start;
-        margin-top: 2rem;
-      }
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero img { justify-self: start; margin-top: 1.5rem; }
     }
   </style>
 </head>
-
 <body>
 
-  <main class="container">
+<main class="container">
 
-    <!-- HERO / HOME -->
-    <section class="hero">
-      <div>
-        <h1>Abraham Sharkey</h1>
-        <p><strong>Computer Science Student</strong></p>
+  <!-- HERO -->
+  <section class="hero">
+    <div>
+      <h1>Abraham Sharkey</h1>
+      <p><strong>Computer Science Student</strong></p>
+      <p>
+        Focused on <strong>Cyber Security</strong>, <strong>Cryptography</strong>, and
+        <strong>Quantum Computing</strong>. Interested in secure systems and
+        next-generation computing.
+      </p>
 
+      <div class="hero-links">
+        <a class="button" href="resume.pdf" target="_blank">Resume (PDF)</a>
+        <a class="button" href="https://github.com/abrahamsharkey" target="_blank" rel="noopener">GitHub</a>
+        <a class="button" href="https://www.linkedin.com/in/abrahamsharkey" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="button" href="mailto:abmsharkey@gmail.com">Email</a>
+      </div>
+    </div>
+
+    <img src="profile.png" alt="Portrait of Abraham Sharkey" />
+  </section>
+
+  <!-- ABOUT -->
+  <section>
+    <h2>About</h2>
+    <div class="block">
+      <p>
+        Computer Science undergraduate with a strong analytical background and
+        interest in cyber security and quantum computing. Enjoys working on
+        system-level problems involving security, correctness, and scalability.
+      </p>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section>
+    <h2>Selected Projects</h2>
+    <div class="block">
+
+      <div class="project">
+        <h3>FlexShade — Smart Climate-Responsive Curtain System</h3>
         <p>
-          Interested in <strong>Cyber Security</strong>, <strong>Cryptography</strong>, and
-          <strong>Quantum Computing</strong>. Analytical problem-solver with a strong
-          interest in secure systems and next-generation computing.
+          IoT-based system integrating sensors and automation to optimise indoor
+          comfort, with attention to system design and secure data handling.
         </p>
-
-        <div class="hero-links">
-          <a href="https://github.com/abrahamsharkey" target="_blank" rel="noopener">GitHub</a>
-          <a href="https://www.linkedin.com/in/abrahamsharkey" target="_blank" rel="noopener">LinkedIn</a>
-          <a href="mailto:abmsharkey@gmail.com">Email</a>
-        </div>
+        <a href="https://github.com/abrahamsharkey" target="_blank">View repository →</a>
       </div>
 
-      <img src="profile.png" alt="Portrait of Abraham Sharkey" />
-    </section>
-
-    <!-- ABOUT -->
-    <section>
-      <h2>About</h2>
-      <div class="card">
+      <div class="project">
+        <h3>Multi-Branch Library Management System</h3>
         <p>
-          I am a Computer Science undergraduate with a growing focus on cyber security
-          and quantum computing. I enjoy tackling complex problems, designing secure
-          systems, and exploring how future computing paradigms will impact privacy
-          and security.
+          Backend system for managing loans and reservations across multiple
+          libraries, focusing on database design, access control, and scalability.
         </p>
+        <a href="https://github.com/abrahamsharkey" target="_blank">View repository →</a>
       </div>
-    </section>
 
-    <!-- PROJECTS -->
-    <section>
-      <h2>Projects</h2>
-      <div class="card">
+    </div>
+  </section>
 
-        <div class="project">
-          <h3>FlexShade — Smart Climate-Responsive Curtain System</h3>
-          <p>
-            IoT-based system using sensors and automation to optimise indoor comfort,
-            with emphasis on system design and secure data handling.
-          </p>
-        </div>
+  <!-- SKILLS -->
+  <section>
+    <h2>Skills</h2>
+    <div class="block">
+      <p>
+        <strong>Programming:</strong> Java, Python, C#, C++, SQL<br />
+        <strong>Systems:</strong> Linux, Git, Docker, VirtualBox<br />
+        <strong>Focus Areas:</strong> Cyber Security, Cryptography, Secure Systems, Quantum Computing
+      </p>
+    </div>
+  </section>
 
-        <div class="project">
-          <h3>Multi-Branch Library Management System</h3>
-          <p>
-            Backend system for managing loans and reservations across multiple libraries,
-            focusing on database design, access control, and scalability.
-          </p>
-        </div>
+  <footer>
+    © 2025 Abraham Sharkey
+  </footer>
 
-      </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section>
-      <h2>Skills & Interests</h2>
-      <div class="card">
-        <p>
-          <strong>Programming:</strong> Java, Python, C#, C++, SQL<br />
-          <strong>Focus:</strong> Cyber Security, Cryptography, Secure Systems, Quantum Computing<br />
-          <strong>Tools:</strong> Git, Linux, Docker, VirtualBox<br />
-          <strong>Other:</strong> Chess, analytical thinking, problem-solving
-        </p>
-      </div>
-    </section>
-
-    <footer>
-      © 2025 Abraham Sharkey
-    </footer>
-
-  </main>
+</main>
 
 </body>
 </html>
