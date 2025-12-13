@@ -3,127 +3,218 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Abraham Sharkey | CS Student</title>
-  <meta name="description" content="Computer Science student interested in Cyber Security and Quantum Computing." />
+  <title>Abraham Sharkey | Computer Science</title>
+  <meta name="description" content="Computer Science student interested in Cyber Security, Cryptography, and Quantum Computing." />
+
   <style>
+    :root {
+      --bg: #0b0f14;
+      --bg-soft: #111827;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --border: #1f2937;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       margin: 0;
-      background: #0b0f14;
-      color: #e5e7eb;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
       line-height: 1.6;
     }
-    header {
-      padding: 4rem 1.5rem;
-      max-width: 900px;
-      margin: auto;
-    }
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
-    h2 {
-      color: #e5e7eb;
-      margin-top: 3rem;
-    }
-    p {
-      max-width: 700px;
-    }
+
     a {
-      color: #e5e7eb;
+      color: var(--text);
       text-decoration: none;
+      border-bottom: 1px solid var(--border);
     }
-    .section {
-      padding: 2rem 1.5rem;
-      max-width: 900px;
-      margin: auto;
+
+    a:hover {
+      opacity: 0.8;
     }
-    .card {
-      background: #111827;
-      padding: 1.5rem;
+
+    /* Layout */
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+    }
+
+    section {
+      margin-top: 4rem;
+    }
+
+    /* Hero */
+    .hero {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 3rem;
+      align-items: center;
+      min-height: 80vh;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin: 0 0 0.5rem 0;
+    }
+
+    .hero p {
+      margin: 0.5rem 0;
+      color: var(--muted);
+      max-width: 520px;
+    }
+
+    .hero-links {
+      margin-top: 1.5rem;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .hero img {
+      width: 100%;
+      max-width: 320px;
       border-radius: 12px;
+      border: 1px solid var(--border);
+      justify-self: end;
+    }
+
+    /* Section titles */
+    h2 {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Cards */
+    .card {
+      background: var(--bg-soft);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      max-width: 720px;
+    }
+
+    /* Projects */
+    .project {
       margin-bottom: 1.5rem;
     }
+
+    .project h3 {
+      margin: 0 0 0.3rem 0;
+      font-size: 1.1rem;
+    }
+
+    .project p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    /* Footer */
     footer {
+      margin-top: 6rem;
+      padding: 2rem 0;
       text-align: center;
-      padding: 2rem;
-      color: #94a3b8;
+      color: var(--muted);
       font-size: 0.9rem;
+      border-top: 1px solid var(--border);
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .hero img {
+        justify-self: start;
+        margin-top: 2rem;
+      }
     }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>Abraham Sharkey</h1>
-  <p>Computer Science Student</p>
-  <p>
-    Interested in <strong>Cyber Security</strong>, <strong>Cryptography</strong>, and <strong>Quantum Computing</strong>.
-    Analytical problem‑solver with a strong interest in secure systems and emerging technologies.
-  </p>
-  <p>
-    <a href="https://github.com/abrahamsharkey">GitHub</a> ·
-    <a href="https://www.linkedin.com/in/abrahamsharkey">LinkedIn</a>
-  </p>
-</header>
+  <main class="container">
 
-<section class="section">
-  <h2>About Me</h2>
-  <div class="card">
-    <p>
-      I am a Computer Science undergraduate with a growing focus on cyber security and quantum computing.
-      I enjoy tackling complex problems, designing secure systems, and exploring how future computing
-      paradigms will impact privacy and security.
-    </p>
-  </div>
-</section>
+    <!-- HERO / HOME -->
+    <section class="hero">
+      <div>
+        <h1>Abraham Sharkey</h1>
+        <p><strong>Computer Science Student</strong></p>
+        <p>
+          Interested in <strong>Cyber Security</strong>, <strong>Cryptography</strong>, and <strong>Quantum Computing</strong>.
+          Analytical problem-solver with a strong interest in secure systems and emerging technologies.
+        </p>
 
-<section class="section">
-  <h2>Projects</h2>
+        <div class="hero-links">
+          <a href="https://github.com/abrahamsharkey" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.linkedin.com/in/abrahamsharkey" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="mailto:abmsharkey@gmail.com">Email</a>
+        </div>
+      </div>
 
-  <div class="card">
-    <h3>FlexShade — Smart Climate‑Responsive Curtain System</h3>
-    <p>
-      An IoT‑based system using sensors and automation to optimise indoor comfort.
-      Focused on system design, hardware integration, and secure data handling.
-    </p>
-  </div>
+      <!-- Replace profile.jpg with your own image file -->
+      <img src="profile.jpg" alt="Portrait of Abraham Sharkey" />
+    </section>
 
-  <div class="card">
-    <h3>Multi‑Branch Library Management System</h3>
-    <p>
-      Backend system for managing loans, reservations, and inventory across multiple libraries.
-      Emphasised database design, access control, and system scalability.
-    </p>
-  </div>
-</section>
+    <!-- ABOUT -->
+    <section>
+      <h2>About</h2>
+      <div class="card">
+        <p>
+          I am a Computer Science undergraduate with a growing focus on cyber security and quantum computing.
+          I enjoy tackling complex problems, designing secure systems, and exploring how future computing
+          paradigms will impact privacy and security.
+        </p>
+      </div>
+    </section>
 
-<section class="section">
-  <h2>Skills & Interests</h2>
-  <div class="card">
-    <p>
-      <strong>Programming:</strong> Java, Python, C#, C++, SQL<br />
-      <strong>Areas:</strong> Cyber Security, Cryptography, Secure Systems, Quantum Computing<br />
-      <strong>Tools:</strong> Git, Linux, Docker, VirtualBox<br />
-      <strong>Other:</strong> Chess, analytical thinking, problem‑solving
-    </p>
-  </div>
-</section>
+    <!-- PROJECTS -->
+    <section>
+      <h2>Projects</h2>
+      <div class="card">
 
-<section class="section">
-  <h2>Contact</h2>
-  <div class="card">
-    <p>
-      Email: <a href="mailto:abmsharkey@gmail.com">abmsharkey@gmail.com</a><br />
-      Open to collaboration, learning opportunities, and research‑driven projects.
-    </p>
-  </div>
-</section>
+        <div class="project">
+          <h3>FlexShade — Smart Climate-Responsive Curtain System</h3>
+          <p>
+            IoT-based system using sensors and automation to optimise indoor comfort, with attention to
+            system design and secure data handling.
+          </p>
+        </div>
 
-<footer>
-  © 2025 Abraham Sharkey
-</footer>
+        <div class="project">
+          <h3>Multi-Branch Library Management System</h3>
+          <p>
+            Backend system for managing loans and reservations across multiple libraries, focusing on
+            database design, access control, and scalability.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section>
+      <h2>Skills & Interests</h2>
+      <div class="card">
+        <p>
+          <strong>Programming:</strong> Java, Python, C#, C++, SQL<br />
+          <strong>Focus:</strong> Cyber Security, Cryptography, Secure Systems, Quantum Computing<br />
+          <strong>Tools:</strong> Git, Linux, Docker, VirtualBox<br />
+          <strong>Other:</strong> Chess, analytical thinking, problem-solving
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      © 2025 Abraham Sharkey
+    </footer>
+
+  </main>
 
 </body>
 </html>
-
