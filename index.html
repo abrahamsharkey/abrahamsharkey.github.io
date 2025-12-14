@@ -1,37 +1,35 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Abraham Sharkey | Computer Science</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Font Awesome -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-  />
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
-    /* ---------- THEMES ---------- */
     :root {
-      --bg: #ffffff;
-      --panel: #f5f7fb;
+      --bg: #f5f7fa;
       --text: #111827;
-      --muted: #4b5563;
+      --muted: #6b7280;
+      --card-bg: #ffffff;
       --border: #e5e7eb;
-      --accent: #1f2937;
+      --link: #2563eb;
     }
 
-    [data-theme="dark"] {
+    body.dark {
       --bg: #0b0f14;
-      --panel: #111827;
       --text: #e5e7eb;
       --muted: #9ca3af;
+      --card-bg: #111827;
       --border: #1f2937;
-      --accent: #cbd5f5;
+      --link: #60a5fa;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
     body {
       margin: 0;
@@ -39,226 +37,219 @@
       background: var(--bg);
       color: var(--text);
       line-height: 1.6;
-      transition: background 0.2s, color 0.2s;
     }
 
     a {
-      color: var(--accent);
+      color: var(--link);
       text-decoration: none;
     }
 
-    /* ---------- TOGGLE ---------- */
-    .theme-toggle {
-      position: fixed;
-      top: 1rem;
-      right: 1rem;
-      border: 1px solid var(--border);
-      background: var(--panel);
-      color: var(--text);
-      padding: 0.4rem 0.6rem;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 0.85rem;
+    a:hover {
+      text-decoration: underline;
     }
 
-    /* ---------- LAYOUT ---------- */
     .container {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 2.5rem 1.5rem;
+      max-width: 1100px;
+      margin: auto;
+      padding: 2rem;
       display: grid;
-      grid-template-columns: 220px 1fr;
-      gap: 3rem;
+      grid-template-columns: 280px 1fr;
+      gap: 2.5rem;
     }
 
-    /* ---------- SIDEBAR ---------- */
+    /* LEFT COLUMN (STICKY PROFILE) */
     .sidebar {
       position: sticky;
       top: 2rem;
       align-self: start;
     }
 
-    .sidebar img {
-      width: 100%;
-      max-width: 180px;
-      border-radius: 10px;
-      border: 1px solid var(--border);
-      margin-bottom: 0.8rem;
+    .profile-img {
+      width: 190px;
+      border-radius: 14px;
+      background: #e5e7eb;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      margin-bottom: 1rem;
     }
 
-    .sidebar h1 {
-      font-size: 1.4rem;
+    .name {
+      font-size: 1.6rem;
+      font-weight: 700;
       margin-bottom: 0.2rem;
     }
 
-    .sidebar p {
+    .role {
       color: var(--muted);
-      font-size: 0.9rem;
-      margin: 0.15rem 0;
+      margin-bottom: 0.2rem;
     }
 
-    /* ---------- LINKS ---------- */
-    .links {
-      margin-top: 0.9rem;
+    .location {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    .icon-links {
       display: flex;
       flex-direction: column;
-      gap: 0.4rem;
-      font-size: 0.9rem;
+      gap: 0.6rem;
+      margin-top: 1rem;
     }
 
-    .links a {
-      display: inline-flex;
+    .icon-links a {
+      display: flex;
       align-items: center;
-      gap: 0.5rem;
-      padding: 0.35rem 0.5rem;
-      border-radius: 6px;
-      border: 1px solid var(--border);
-      color: var(--text);
-      width: fit-content;
+      gap: 0.6rem;
+      font-size: 0.95rem;
     }
 
-    .links a:hover {
-      background: var(--panel);
+    /* RIGHT COLUMN */
+    section {
+      margin-bottom: 2rem;
     }
-
-    /* ---------- CONTENT ---------- */
-    section { margin-bottom: 2.5rem; }
 
     h2 {
-      font-size: 1.25rem;
+      font-size: 1.4rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.4rem;
+    }
+
+    .project-title {
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+      margin: 0;
+    }
+
+    li {
       margin-bottom: 0.5rem;
     }
 
-    .block {
-      background: var(--panel);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 1.2rem;
-    }
-
-    .item {
-      margin-bottom: 1.1rem;
-    }
-
-    .item h3 {
-      font-size: 1rem;
-      margin: 0 0 0.2rem 0;
-    }
-
-    .item p {
-      margin: 0.2rem 0;
+    footer {
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      text-align: center;
       color: var(--muted);
       font-size: 0.9rem;
     }
 
-    footer {
-      grid-column: span 2;
-      margin-top: 3rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid var(--border);
-      text-align: center;
-      color: var(--muted);
+    /* Toggle */
+    .toggle {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      padding: 0.4rem 0.7rem;
+      border-radius: 20px;
+      cursor: pointer;
       font-size: 0.85rem;
     }
 
     @media (max-width: 900px) {
-      .container { grid-template-columns: 1fr; }
-      .sidebar { position: static; }
+      .container {
+        grid-template-columns: 1fr;
+      }
+      .sidebar {
+        position: static;
+      }
     }
   </style>
 </head>
 
 <body>
 
-<button class="theme-toggle" onclick="toggleTheme()">
-  <i class="fa-solid fa-circle-half-stroke"></i>
-</button>
+<button class="toggle" onclick="toggleTheme()">Toggle theme</button>
 
 <div class="container">
 
   <!-- SIDEBAR -->
   <aside class="sidebar">
-    <img id="profileImage" src="profile-light.png" alt="Abraham Sharkey" />
+    <img src="profile.png" alt="Profile photo of Abraham Sharkey" class="profile-img">
 
-    <h1>Abraham Sharkey</h1>
-    <p>Computer Science Student</p>
-    <p>Birmingham, UK</p>
+    <div class="name">Abraham Sharkey</div>
+    <div class="role">Computer Science Student</div>
+    <div class="location">Birmingham, UK</div>
 
-    <div class="links">
-      <a href="resume.pdf" target="_blank">
-        <i class="fa-solid fa-file-lines"></i> CV
-      </a>
-      <a href="https://github.com/abrahamsharkey" target="_blank">
-        <i class="fa-brands fa-github"></i> GitHub
-      </a>
-      <a href="https://www.linkedin.com/in/abrahamsharkey" target="_blank">
-        <i class="fa-brands fa-linkedin"></i> LinkedIn
-      </a>
-      <a href="mailto:abmsharkey@gmail.com">
-        <i class="fa-solid fa-envelope"></i> Email
-      </a>
+    <div class="icon-links">
+      <a href="resume.pdf" target="_blank"><i class="fa-solid fa-file"></i> CV (PDF)</a>
+      <a href="https://github.com/abrahamsharkey" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+      <a href="https://linkedin.com/in/abrahamsharkey" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+      <a href="mailto:abmsharkey@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
     </div>
   </aside>
 
-  <!-- MAIN -->
+  <!-- MAIN CONTENT -->
   <main>
 
     <section>
       <h2>About</h2>
-      <div class="block">
-        <p>
-          Computer Science undergraduate with interests in cyber security,
-          cryptography, and quantum computing. Particularly interested in
-          secure systems, correctness, and next-generation computing models.
-        </p>
+      <div class="card">
+        Computer Science undergraduate with interests in cyber security, cryptography,
+        and quantum computing. Particularly interested in secure systems, correctness,
+        and next-generation computing models.
       </div>
     </section>
 
     <section>
       <h2>Selected Projects</h2>
-      <div class="block">
-        <div class="item">
-          <h3>FlexShade — Smart Climate-Responsive Curtain System</h3>
-          <p>IoT system integrating sensors and automation for indoor climate optimisation.</p>
-        </div>
+      <div class="card">
+        <div class="project-title">FlexShade — Smart Climate-Responsive Curtain System</div>
+        IoT system integrating sensors and automation for indoor climate optimisation.
+        <br><a href="#">Repository</a>
 
-        <div class="item">
-          <h3>Multi-Branch Library Management System</h3>
-          <p>Backend system for managing loans and reservations across multiple libraries.</p>
-        </div>
+        <br><br>
+
+        <div class="project-title">Multi-Branch Library Management System</div>
+        Backend system for managing loans and reservations across multiple libraries.
+        <br><a href="#">Repository</a>
       </div>
     </section>
 
     <section>
-      <h2>Courses & Certifications</h2>
-      <div class="block">
-        <div class="item"><p>Introduction to Quantum Information</p></div>
-        <div class="item"><p>Object-Oriented Programming (Java)</p></div>
-        <div class="item"><p>Operating Systems & Networking</p></div>
+      <h2>Relevant Coursework</h2>
+      <div class="card">
+        <ul>
+          <li>Data Structures & Algorithms</li>
+          <li>Operating Systems</li>
+          <li>Computer Networks</li>
+          <li>Databases & Backend Systems</li>
+          <li>Cyber Security Fundamentals</li>
+          <li>Object-Oriented Programming & Software Engineering</li>
+        </ul>
       </div>
     </section>
 
+    <section>
+      <h2>Awards & Achievements</h2>
+      <div class="card">
+        <ul>
+          <li>Innovation Project — FlexShade (Smart Climate-Responsive System)</li>
+          <li>Strong academic performance in Computer Science modules</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      © 2025 Abraham Sharkey
+    </footer>
+
   </main>
-
-  <footer>
-    © 2025 Abraham Sharkey
-  </footer>
-
 </div>
 
 <script>
   function toggleTheme() {
-    const root = document.documentElement;
-    const img = document.getElementById("profileImage");
-    const current = root.getAttribute("data-theme");
-
-    if (current === "dark") {
-      root.setAttribute("data-theme", "light");
-      img.src = "profile-light.png";
-    } else {
-      root.setAttribute("data-theme", "dark");
-      img.src = "profile-dark.png";
-    }
+    document.body.classList.toggle("dark");
   }
 </script>
 
