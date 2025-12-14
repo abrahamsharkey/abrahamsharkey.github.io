@@ -72,7 +72,8 @@
       margin-bottom: 0.6rem;
     }
 
-    .icon-links a:hover {
+    /* ✅ CHANGE: underline text only, not icon */
+    .icon-links a:hover span {
       text-decoration: underline;
     }
 
@@ -162,16 +163,16 @@
 
       <div class="icon-links">
         <a href="resume.pdf" target="_blank" rel="noopener noreferrer">
-          <i class="fa-regular fa-file"></i> CV
+          <i class="fa-regular fa-file"></i> <span>CV</span>
         </a>
         <a href="https://github.com/abrahamsharkey" target="_blank" rel="noopener noreferrer">
-          <i class="fa-brands fa-github"></i> GitHub
+          <i class="fa-brands fa-github"></i> <span>GitHub</span>
         </a>
         <a href="https://linkedin.com/in/abrahamsharkey" target="_blank" rel="noopener noreferrer">
-          <i class="fa-brands fa-linkedin"></i> LinkedIn
+          <i class="fa-brands fa-linkedin"></i> <span>LinkedIn</span>
         </a>
         <a href="mailto:abmsharkey@gmail.com">
-          <i class="fa-regular fa-envelope"></i> Email
+          <i class="fa-regular fa-envelope"></i> <span>Email</span>
         </a>
       </div>
     </aside>
