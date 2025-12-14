@@ -47,8 +47,6 @@
       text-decoration: none;
     }
 
-    a:hover { opacity: 0.85; }
-
     /* ---------- TOGGLE ---------- */
     .theme-toggle {
       position: fixed;
@@ -82,11 +80,10 @@
 
     .sidebar img {
       width: 100%;
-      max-width: 180px;   /* SMALLER IMAGE */
+      max-width: 180px;
       border-radius: 10px;
       border: 1px solid var(--border);
       margin-bottom: 0.8rem;
-      background: var(--bg);
     }
 
     .sidebar h1 {
@@ -100,7 +97,7 @@
       margin: 0.15rem 0;
     }
 
-    /* ---------- ICON LINKS WITH LABELS ---------- */
+    /* ---------- LINKS ---------- */
     .links {
       margin-top: 0.9rem;
       display: flex;
@@ -181,7 +178,7 @@
 
   <!-- SIDEBAR -->
   <aside class="sidebar">
-    <img src="profile.png" alt="Abraham Sharkey" />
+    <img id="profileImage" src="profile-light.png" alt="Abraham Sharkey" />
 
     <h1>Abraham Sharkey</h1>
     <p>Computer Science Student</p>
@@ -212,7 +209,7 @@
         <p>
           Computer Science undergraduate with interests in cyber security,
           cryptography, and quantum computing. Particularly interested in
-          secure systems, correctness, and next-generation computing.
+          secure systems, correctness, and next-generation computing models.
         </p>
       </div>
     </section>
@@ -232,6 +229,15 @@
       </div>
     </section>
 
+    <section>
+      <h2>Courses & Certifications</h2>
+      <div class="block">
+        <div class="item"><p>Introduction to Quantum Information</p></div>
+        <div class="item"><p>Object-Oriented Programming (Java)</p></div>
+        <div class="item"><p>Operating Systems & Networking</p></div>
+      </div>
+    </section>
+
   </main>
 
   <footer>
@@ -243,8 +249,16 @@
 <script>
   function toggleTheme() {
     const root = document.documentElement;
+    const img = document.getElementById("profileImage");
     const current = root.getAttribute("data-theme");
-    root.setAttribute("data-theme", current === "dark" ? "light" : "dark");
+
+    if (current === "dark") {
+      root.setAttribute("data-theme", "light");
+      img.src = "profile-light.png";
+    } else {
+      root.setAttribute("data-theme", "dark");
+      img.src = "profile-dark.png";
+    }
   }
 </script>
 
