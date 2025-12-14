@@ -2,147 +2,142 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Abraham Sharkey | Computer Science Student</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abraham Sharkey | Computer Science</title>
 
-  <!-- Font Awesome -->
+  <!-- Font Awesome (icons) -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
   />
 
   <style>
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
       margin: 0;
-      background: #f6f7f9;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f7f8fa;
       color: #111;
     }
 
     .container {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 40px 24px;
+      padding: 3rem 2rem;
       display: grid;
-      grid-template-columns: 280px 1fr;
-      gap: 48px;
+      grid-template-columns: 260px 1fr;
+      gap: 3rem;
     }
 
     /* Sidebar */
     .sidebar {
       position: sticky;
-      top: 32px;
+      top: 2rem;
       align-self: start;
     }
 
-    .profile-image {
-      background: #ccc;
-      border-radius: 16px;
-      padding: 16px;
-      text-align: center;
-    }
-
-    .profile-image img {
+    .profile-img {
       width: 100%;
-      max-width: 240px;
-      height: auto;
-      border-radius: 12px;
+      border-radius: 16px;
+      background: #ccc;
+      margin-bottom: 1.5rem;
     }
 
     .name {
-      font-size: 22px;
+      font-size: 1.5rem;
       font-weight: 600;
-      margin-top: 16px;
+      margin-bottom: 0.25rem;
     }
 
-    .role {
+    .subtitle {
       color: #555;
-      margin-top: 4px;
+      margin-bottom: 0.25rem;
     }
 
     .location {
       color: #777;
-      font-size: 14px;
-      margin-top: 4px;
+      font-size: 0.9rem;
+      margin-bottom: 1.25rem;
     }
 
-    .links {
-      margin-top: 16px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      font-size: 15px;
-    }
-
-    .links a {
-      color: inherit;
+    .icon-links a {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 0.6rem;
+      text-decoration: none;
+      color: #111;
+      font-size: 0.95rem;
+      margin-bottom: 0.6rem;
     }
 
-    .links a:hover {
+    .icon-links a:hover {
       text-decoration: underline;
     }
 
     /* Main content */
+    section {
+      margin-bottom: 2.5rem;
+    }
+
     h2 {
-      margin-top: 0;
+      margin-bottom: 1rem;
+      font-size: 1.4rem;
     }
 
     .card {
       background: #fff;
-      border-radius: 12px;
-      padding: 24px;
-      margin-bottom: 32px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      border-radius: 14px;
+      padding: 1.4rem 1.6rem;
+      box-shadow: 0 0 0 1px #e6e8eb;
     }
 
-    .project {
-      margin-bottom: 24px;
+    .card + .card {
+      margin-top: 1.2rem;
     }
 
-    .project:last-child {
-      margin-bottom: 0;
+    .card strong {
+      font-size: 1.05rem;
     }
 
-    .project strong {
-      font-size: 16px;
+    .card span {
+      display: block;
+      margin-top: 0.4rem;
+      color: #444;
+      line-height: 1.5;
     }
 
-    .project p {
-      margin: 6px 0 10px;
-      color: #333;
-    }
-
-    .project-links {
+    .pub-links {
+      margin-top: 0.8rem;
       display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
+      gap: 0.8rem;
     }
 
-    .project-links a {
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 6px 10px;
-      font-size: 14px;
+    .pub-links a {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 0.4rem;
+      font-size: 0.85rem;
+      padding: 0.35rem 0.6rem;
+      border-radius: 6px;
+      border: 1px solid #d0d4d9;
+      text-decoration: none;
+      color: #111;
+      background: #fff;
     }
 
-    .project-links a:hover {
-      background: #f1f1f1;
+    .pub-links a:hover {
+      background: #f2f3f5;
     }
 
     footer {
       text-align: center;
-      margin-top: 40px;
       color: #777;
-      font-size: 14px;
+      font-size: 0.85rem;
+      margin-top: 4rem;
     }
 
-    /* Mobile */
     @media (max-width: 900px) {
       .container {
         grid-template-columns: 1fr;
@@ -150,10 +145,6 @@
 
       .sidebar {
         position: static;
-      }
-
-      .profile-image img {
-        max-width: 200px;
       }
     }
   </style>
@@ -163,59 +154,58 @@
   <div class="container">
     <!-- Sidebar -->
     <aside class="sidebar">
-      <div class="profile-image">
-        <img src="profile.png" alt="Abraham Sharkey" />
-      </div>
+      <img src="profile.png" alt="Profile photo" class="profile-img" />
 
       <div class="name">Abraham Sharkey</div>
-      <div class="role">Computer Science Student</div>
+      <div class="subtitle">Computer Science Student</div>
       <div class="location">Birmingham, UK</div>
 
-      <div class="links">
-        <a href="cv.pdf" target="_blank" rel="noopener">
-          <i class="fa-solid fa-file-pdf"></i> CV
+      <div class="icon-links">
+        <a href="resume.pdf" target="_blank" rel="noopener noreferrer">
+          <i class="fa-regular fa-file"></i> CV
         </a>
-        <a href="https://github.com/abrahamsharkey" target="_blank" rel="noopener">
+        <a href="https://github.com/abrahamsharkey" target="_blank" rel="noopener noreferrer">
           <i class="fa-brands fa-github"></i> GitHub
         </a>
-        <a href="https://linkedin.com/in/abrahamsharkey" target="_blank" rel="noopener">
+        <a href="https://linkedin.com/in/abrahamsharkey" target="_blank" rel="noopener noreferrer">
           <i class="fa-brands fa-linkedin"></i> LinkedIn
         </a>
         <a href="mailto:abmsharkey@gmail.com">
-          <i class="fa-solid fa-envelope"></i> Email
+          <i class="fa-regular fa-envelope"></i> Email
         </a>
       </div>
     </aside>
 
-    <!-- Main -->
+    <!-- Main content -->
     <main>
-      <h2>About</h2>
-      <div class="card">
-        <p>
-          Computer Science undergraduate with interests in cyber security,
-          cryptography, and quantum computing. I am particularly interested in
-          secure systems, correctness, and how emerging computing models may
-          affect privacy and reliability.
-        </p>
-        <p>
-          Through coursework and projects, I have developed experience in backend
-          development, database modelling, and IoT-based systems, and I am
-          increasingly drawn to research-oriented work at the intersection of
-          systems and security.
-        </p>
-      </div>
+      <section>
+        <h2>About</h2>
+        <div class="card">
+          <span>
+            Computer Science undergraduate with interests in cyber security, cryptography,
+            and quantum computing. I am particularly interested in secure systems,
+            correctness, and how emerging computing models may affect privacy and reliability.
+          </span>
+          <span>
+            Through coursework and projects, I have developed experience in backend
+            development, database modelling, and IoT-based systems, and I am increasingly
+            drawn to research-oriented work at the intersection of systems and security.
+          </span>
+        </div>
+      </section>
 
-      <h2>Selected Projects & Papers</h2>
-      <div class="card">
-        <div class="project">
+      <section>
+        <h2>Selected Projects & Papers</h2>
+
+        <div class="card">
           <strong>FlexShade — Smart Climate-Responsive Curtain System</strong>
-          <p>
-            IoT-based system integrating sensors and automation to optimise
-            indoor climate conditions.
-          </p>
-          <div class="project-links">
+          <span>
+            IoT-based system integrating sensors and automation to optimise indoor
+            climate conditions.
+          </span>
+          <div class="pub-links">
             <a href="flexshade.pdf" target="_blank">
-              <i class="fa-solid fa-file-pdf"></i> PDF
+              <i class="fa-regular fa-file-pdf"></i> PDF
             </a>
             <a href="https://github.com/abrahamsharkey/flexshade" target="_blank">
               <i class="fa-solid fa-code"></i> Code
@@ -223,33 +213,44 @@
           </div>
         </div>
 
-        <div class="project">
+        <div class="card">
           <strong>Library Loan Management System</strong>
-          <p>
+          <span>
             Backend system for managing loans, returns, and reservations across
             multiple libraries.
-          </p>
-          <div class="project-links">
+          </span>
+          <div class="pub-links">
             <a href="https://github.com/abrahamsharkey/library-loan-system" target="_blank">
               <i class="fa-solid fa-code"></i> Code
             </a>
           </div>
         </div>
 
-        <div class="project">
+        <div class="card">
           <strong>Interactive Library System (Object-Oriented Programming)</strong>
-          <p>
-            Object-oriented library management system developed in Java,
-            focusing on class design, encapsulation, inheritance, and
-            polymorphism.
-          </p>
-          <div class="project-links">
+          <span>
+            Object-oriented library management system developed in Java, focusing on
+            class design, encapsulation, inheritance, and polymorphism.
+          </span>
+          <div class="pub-links">
             <a href="https://github.com/abrahamsharkey/interactive-library-system" target="_blank">
               <i class="fa-solid fa-code"></i> Code
             </a>
           </div>
         </div>
-      </div>
+      </section>
+
+      <section>
+        <h2>Relevant Coursework</h2>
+        <div class="card">
+          <span>Data Structures & Algorithms</span>
+          <span>Operating Systems</span>
+          <span>Computer Networks</span>
+          <span>Databases & Backend Systems</span>
+          <span>Cyber Security Fundamentals</span>
+          <span>Object-Oriented Programming & Software Engineering</span>
+        </div>
+      </section>
 
       <footer>© 2025 Abraham Sharkey</footer>
     </main>
