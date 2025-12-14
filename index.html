@@ -1,34 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Abraham Sharkey | Computer Science</title>
 
-  <!-- Font Awesome Icons -->
+  <!-- Font Awesome -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
   />
 
   <style>
-    /* ---------- THEME VARIABLES ---------- */
+    /* ---------- THEMES ---------- */
     :root {
-      --bg: #0b0f14;
-      --panel: #111827;
-      --text: #e5e7eb;
-      --muted: #9ca3af;
-      --border: #1f2937;
-      --accent: #cbd5f5;
-    }
-
-    [data-theme="light"] {
       --bg: #ffffff;
       --panel: #f5f7fb;
       --text: #111827;
       --muted: #4b5563;
       --border: #e5e7eb;
       --accent: #1f2937;
+    }
+
+    [data-theme="dark"] {
+      --bg: #0b0f14;
+      --panel: #111827;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --border: #1f2937;
+      --accent: #cbd5f5;
     }
 
     * { box-sizing: border-box; }
@@ -49,28 +49,28 @@
 
     a:hover { opacity: 0.85; }
 
+    /* ---------- TOGGLE ---------- */
+    .theme-toggle {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      color: var(--text);
+      padding: 0.4rem 0.6rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.85rem;
+    }
+
     /* ---------- LAYOUT ---------- */
     .container {
       max-width: 1000px;
       margin: 0 auto;
       padding: 2.5rem 1.5rem;
       display: grid;
-      grid-template-columns: 240px 1fr;
+      grid-template-columns: 220px 1fr;
       gap: 3rem;
-    }
-
-    /* ---------- THEME TOGGLE ---------- */
-    .theme-toggle {
-      position: fixed;
-      top: 1.2rem;
-      right: 1.2rem;
-      border: 1px solid var(--border);
-      background: var(--panel);
-      color: var(--text);
-      padding: 0.45rem 0.6rem;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 0.9rem;
     }
 
     /* ---------- SIDEBAR ---------- */
@@ -82,55 +82,54 @@
 
     .sidebar img {
       width: 100%;
-      max-width: 220px; /* smaller image */
-      border-radius: 12px;
+      max-width: 180px;   /* SMALLER IMAGE */
+      border-radius: 10px;
       border: 1px solid var(--border);
-      margin-bottom: 1rem;
+      margin-bottom: 0.8rem;
       background: var(--bg);
     }
 
     .sidebar h1 {
-      font-size: 1.5rem;
-      margin-bottom: 0.3rem;
+      font-size: 1.4rem;
+      margin-bottom: 0.2rem;
     }
 
     .sidebar p {
       color: var(--muted);
       font-size: 0.9rem;
-      margin: 0.2rem 0;
+      margin: 0.15rem 0;
     }
 
-    /* ---------- ICON LINKS ---------- */
-    .icons {
-      margin-top: 1rem;
+    /* ---------- ICON LINKS WITH LABELS ---------- */
+    .links {
+      margin-top: 0.9rem;
       display: flex;
-      gap: 0.6rem;
-      flex-wrap: wrap;
+      flex-direction: column;
+      gap: 0.4rem;
+      font-size: 0.9rem;
     }
 
-    .icons a {
-      border: 1px solid var(--border);
-      padding: 0.45rem 0.6rem;
-      border-radius: 6px;
-      font-size: 1rem;
-      color: var(--text);
+    .links a {
       display: inline-flex;
       align-items: center;
-      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.5rem;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      color: var(--text);
+      width: fit-content;
     }
 
-    .icons a:hover {
+    .links a:hover {
       background: var(--panel);
     }
 
     /* ---------- CONTENT ---------- */
-    section {
-      margin-bottom: 2.5rem;
-    }
+    section { margin-bottom: 2.5rem; }
 
     h2 {
-      font-size: 1.3rem;
-      margin-bottom: 0.6rem;
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
     }
 
     .block {
@@ -141,7 +140,7 @@
     }
 
     .item {
-      margin-bottom: 1.2rem;
+      margin-bottom: 1.1rem;
     }
 
     .item h3 {
@@ -166,12 +165,8 @@
     }
 
     @media (max-width: 900px) {
-      .container {
-        grid-template-columns: 1fr;
-      }
-      .sidebar {
-        position: static;
-      }
+      .container { grid-template-columns: 1fr; }
+      .sidebar { position: static; }
     }
   </style>
 </head>
@@ -192,11 +187,19 @@
     <p>Computer Science Student</p>
     <p>Birmingham, UK</p>
 
-    <div class="icons">
-      <a href="resume.pdf" target="_blank" title="CV"><i class="fa-solid fa-file-lines"></i></a>
-      <a href="https://github.com/abrahamsharkey" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
-      <a href="https://www.linkedin.com/in/abrahamsharkey" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-      <a href="mailto:abmsharkey@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
+    <div class="links">
+      <a href="resume.pdf" target="_blank">
+        <i class="fa-solid fa-file-lines"></i> CV
+      </a>
+      <a href="https://github.com/abrahamsharkey" target="_blank">
+        <i class="fa-brands fa-github"></i> GitHub
+      </a>
+      <a href="https://www.linkedin.com/in/abrahamsharkey" target="_blank">
+        <i class="fa-brands fa-linkedin"></i> LinkedIn
+      </a>
+      <a href="mailto:abmsharkey@gmail.com">
+        <i class="fa-solid fa-envelope"></i> Email
+      </a>
     </div>
   </aside>
 
@@ -209,7 +212,7 @@
         <p>
           Computer Science undergraduate with interests in cyber security,
           cryptography, and quantum computing. Particularly interested in
-          secure systems, correctness, and next-generation computing models.
+          secure systems, correctness, and next-generation computing.
         </p>
       </div>
     </section>
@@ -239,11 +242,9 @@
 
 <script>
   function toggleTheme() {
-    const current = document.documentElement.getAttribute("data-theme");
-    document.documentElement.setAttribute(
-      "data-theme",
-      current === "light" ? "dark" : "light"
-    );
+    const root = document.documentElement;
+    const current = root.getAttribute("data-theme");
+    root.setAttribute("data-theme", current === "dark" ? "light" : "dark");
   }
 </script>
 
