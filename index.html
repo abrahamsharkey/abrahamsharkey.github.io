@@ -5,7 +5,6 @@
   <title>Abraham Sharkey | Computer Science</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
@@ -15,7 +14,6 @@
       --muted: #9ca3af;
       --card: #111827;
       --border: #1f2937;
-      --accent: #e5e7eb;
     }
 
     body.light {
@@ -24,7 +22,6 @@
       --muted: #6b7280;
       --card: #ffffff;
       --border: #e5e7eb;
-      --accent: #111827;
     }
 
     * { box-sizing: border-box; }
@@ -43,8 +40,6 @@
       border-bottom: 1px solid var(--border);
     }
 
-    a:hover { opacity: 0.8; }
-
     .container {
       max-width: 1100px;
       margin: auto;
@@ -57,7 +52,6 @@
     .sidebar {
       position: sticky;
       top: 2rem;
-      align-self: start;
     }
 
     .profile-img {
@@ -68,16 +62,8 @@
       margin-bottom: 1rem;
     }
 
-    .name {
-      font-size: 1.5rem;
-      font-weight: 700;
-    }
-
-    .role,
-    .location {
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
+    .name { font-size: 1.5rem; font-weight: 700; }
+    .role, .location { color: var(--muted); font-size: 0.95rem; }
 
     .icon-links {
       margin-top: 1.2rem;
@@ -96,23 +82,13 @@
 
     section { margin-bottom: 2rem; }
 
-    h2 {
-      font-size: 1.35rem;
-      margin-bottom: 0.8rem;
-    }
+    h2 { font-size: 1.35rem; margin-bottom: 0.8rem; }
 
     .card {
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: 14px;
       padding: 1.4rem;
-    }
-
-    .item { margin-bottom: 1.2rem; }
-
-    .item-title {
-      font-weight: 600;
-      margin-bottom: 0.2rem;
     }
 
     footer {
@@ -138,107 +114,90 @@
       justify-content: center;
       cursor: pointer;
     }
-
-    @media (max-width: 900px) {
-      .container { grid-template-columns: 1fr; }
-      .sidebar { position: static; }
-    }
   </style>
 </head>
 
 <body class="light">
 
-  <div class="theme-toggle" onclick="toggleTheme()">
-    <i id="themeIcon" class="fa-solid fa-moon"></i>
-  </div>
+<div class="theme-toggle" onclick="toggleTheme()">
+  <i id="themeIcon" class="fa-solid fa-moon"></i>
+</div>
 
-  <div class="container">
+<div class="container">
 
-    <!-- Sidebar -->
-    <aside class="sidebar">
-      <img src="profile.png" alt="Profile photo of Abraham Sharkey" class="profile-img">
+  <aside class="sidebar">
+    <img src="profile.png" alt="Profile photo of Abraham Sharkey" class="profile-img">
+    <div class="name">Abraham Sharkey</div>
+    <div class="role">Computer Science Student</div>
+    <div class="location">Birmingham, UK</div>
 
-      <div class="name">Abraham Sharkey</div>
-      <div class="role">Computer Science Student</div>
-      <div class="location">Birmingham, UK</div>
+    <div class="icon-links">
+      <a href="resume.pdf"><i class="fa-solid fa-file"></i> CV (PDF)</a>
+      <a href="https://github.com/abrahamsharkey"><i class="fa-brands fa-github"></i> GitHub</a>
+      <a href="https://linkedin.com/in/abrahamsharkey"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+      <a href="mailto:abmsharkey@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
+    </div>
+  </aside>
 
-      <div class="icon-links">
-        <a href="resume.pdf" target="_blank"><i class="fa-solid fa-file"></i> CV (PDF)</a>
-        <a href="https://github.com/abrahamsharkey" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
-        <a href="https://linkedin.com/in/abrahamsharkey" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-        <a href="mailto:abmsharkey@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
+  <main>
+
+    <!-- UPDATED ABOUT SECTION -->
+    <section>
+      <h2>About</h2>
+      <div class="card">
+        <p>
+          Computer Science undergraduate with interests in cyber security, cryptography,
+          and quantum computing. I am particularly interested in secure systems,
+          correctness, and how emerging computing models may affect privacy and reliability.
+        </p>
+
+        <p>
+          Through coursework and projects, I have developed experience in backend
+          development, database modelling, and IoT-based systems, and I am increasingly
+          drawn to research-oriented work at the intersection of systems and security.
+        </p>
       </div>
-    </aside>
+    </section>
 
-    <!-- Main content -->
-    <main>
+    <section>
+      <h2>Selected Projects</h2>
+      <div class="card">
+        <strong>FlexShade — Smart Climate-Responsive Curtain System</strong><br>
+        IoT system integrating sensors and automation for indoor climate optimisation.<br>
+        <a href="#">Repository</a><br><br>
 
-      <section>
-        <h2>About</h2>
-        <div class="card">
-          Computer Science undergraduate with interests in cyber security, cryptography, and quantum computing.
-          I am particularly interested in secure systems, correctness, and how emerging computing models may
-          affect privacy and reliability. Through coursework and projects, I have developed experience in
-          backend development, database modelling, and IoT-based systems, and I am increasingly drawn to
-          research-oriented work at the intersection of systems and security.
-        </div>
-      </section>
+        <strong>Multi-Branch Library Management System</strong><br>
+        Backend system for managing loans and reservations across multiple libraries.<br>
+        <a href="#">Repository</a>
+      </div>
+    </section>
 
-      <section>
-        <h2>Selected Projects</h2>
-        <div class="card">
+    <section>
+      <h2>Relevant Coursework</h2>
+      <div class="card">
+        Data Structures & Algorithms<br>
+        Operating Systems<br>
+        Computer Networks<br>
+        Databases & Backend Systems<br>
+        Cyber Security Fundamentals<br>
+        Object-Oriented Programming & Software Engineering
+      </div>
+    </section>
 
-          <div class="item">
-            <div class="item-title">FlexShade — Smart Climate-Responsive Curtain System</div>
-            IoT system integrating sensors and automation for indoor climate optimisation.
-            <br><a href="#">Repository</a>
-          </div>
+    <footer>© 2025 Abraham Sharkey</footer>
 
-          <div class="item">
-            <div class="item-title">Multi-Branch Library Management System</div>
-            Backend system for managing loans and reservations across multiple libraries.
-            <br><a href="#">Repository</a>
-          </div>
+  </main>
+</div>
 
-        </div>
-      </section>
-
-      <section>
-        <h2>Relevant Coursework</h2>
-        <div class="card">
-          Data Structures & Algorithms<br>
-          Operating Systems<br>
-          Computer Networks<br>
-          Databases & Backend Systems<br>
-          Cyber Security Fundamentals<br>
-          Object-Oriented Programming & Software Engineering
-        </div>
-      </section>
-
-      <section>
-        <h2>Awards & Achievements</h2>
-        <div class="card">
-          Innovation Project — FlexShade (Smart Climate-Responsive System)<br>
-          Strong academic performance in Computer Science modules
-        </div>
-      </section>
-
-      <footer>
-        © 2025 Abraham Sharkey
-      </footer>
-
-    </main>
-  </div>
-
-  <script>
-    function toggleTheme() {
-      document.body.classList.toggle("light");
-      const icon = document.getElementById("themeIcon");
-      icon.className = document.body.classList.contains("light")
+<script>
+  function toggleTheme() {
+    document.body.classList.toggle("light");
+    document.getElementById("themeIcon").className =
+      document.body.classList.contains("light")
         ? "fa-solid fa-moon"
         : "fa-solid fa-sun";
-    }
-  </script>
+  }
+</script>
 
 </body>
 </html>
