@@ -12,6 +12,7 @@
   />
 
   <style>
+    /* ---------- THEME VARIABLES ---------- */
     :root {
       --bg: #0b0f14;
       --panel: #111827;
@@ -19,6 +20,15 @@
       --muted: #9ca3af;
       --border: #1f2937;
       --accent: #cbd5f5;
+    }
+
+    [data-theme="light"] {
+      --bg: #ffffff;
+      --panel: #f5f7fb;
+      --text: #111827;
+      --muted: #4b5563;
+      --border: #e5e7eb;
+      --accent: #1f2937;
     }
 
     * { box-sizing: border-box; }
@@ -29,6 +39,7 @@
       background: var(--bg);
       color: var(--text);
       line-height: 1.6;
+      transition: background 0.2s, color 0.2s;
     }
 
     a {
@@ -38,16 +49,31 @@
 
     a:hover { opacity: 0.85; }
 
+    /* ---------- LAYOUT ---------- */
     .container {
       max-width: 1000px;
       margin: 0 auto;
       padding: 2.5rem 1.5rem;
       display: grid;
-      grid-template-columns: 260px 1fr;
+      grid-template-columns: 240px 1fr;
       gap: 3rem;
     }
 
-    /* SIDEBAR (STICKY) */
+    /* ---------- THEME TOGGLE ---------- */
+    .theme-toggle {
+      position: fixed;
+      top: 1.2rem;
+      right: 1.2rem;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      color: var(--text);
+      padding: 0.45rem 0.6rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    /* ---------- SIDEBAR ---------- */
     .sidebar {
       position: sticky;
       top: 2rem;
@@ -56,6 +82,7 @@
 
     .sidebar img {
       width: 100%;
+      max-width: 220px; /* smaller image */
       border-radius: 12px;
       border: 1px solid var(--border);
       margin-bottom: 1rem;
@@ -63,17 +90,17 @@
     }
 
     .sidebar h1 {
-      font-size: 1.6rem;
+      font-size: 1.5rem;
       margin-bottom: 0.3rem;
     }
 
     .sidebar p {
       color: var(--muted);
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       margin: 0.2rem 0;
     }
 
-    /* ICON LINKS */
+    /* ---------- ICON LINKS ---------- */
     .icons {
       margin-top: 1rem;
       display: flex;
@@ -96,7 +123,7 @@
       background: var(--panel);
     }
 
-    /* MAIN CONTENT */
+    /* ---------- CONTENT ---------- */
     section {
       margin-bottom: 2.5rem;
     }
@@ -128,10 +155,6 @@
       font-size: 0.9rem;
     }
 
-    .item a {
-      font-size: 0.85rem;
-    }
-
     footer {
       grid-column: span 2;
       margin-top: 3rem;
@@ -146,7 +169,6 @@
       .container {
         grid-template-columns: 1fr;
       }
-
       .sidebar {
         position: static;
       }
@@ -155,6 +177,10 @@
 </head>
 
 <body>
+
+<button class="theme-toggle" onclick="toggleTheme()">
+  <i class="fa-solid fa-circle-half-stroke"></i>
+</button>
 
 <div class="container">
 
@@ -167,21 +193,10 @@
     <p>Birmingham, UK</p>
 
     <div class="icons">
-      <a href="resume.pdf" target="_blank" title="CV">
-        <i class="fa-solid fa-file-lines"></i>
-      </a>
-
-      <a href="https://github.com/abrahamsharkey" target="_blank" title="GitHub">
-        <i class="fa-brands fa-github"></i>
-      </a>
-
-      <a href="https://www.linkedin.com/in/abrahamsharkey" target="_blank" title="LinkedIn">
-        <i class="fa-brands fa-linkedin"></i>
-      </a>
-
-      <a href="mailto:abmsharkey@gmail.com" title="Email">
-        <i class="fa-solid fa-envelope"></i>
-      </a>
+      <a href="resume.pdf" target="_blank" title="CV"><i class="fa-solid fa-file-lines"></i></a>
+      <a href="https://github.com/abrahamsharkey" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/abrahamsharkey" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="mailto:abmsharkey@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
     </div>
   </aside>
 
@@ -202,36 +217,15 @@
     <section>
       <h2>Selected Projects</h2>
       <div class="block">
-
         <div class="item">
           <h3>FlexShade — Smart Climate-Responsive Curtain System</h3>
           <p>IoT system integrating sensors and automation for indoor climate optimisation.</p>
-          <a href="https://github.com/abrahamsharkey">Code →</a>
         </div>
 
         <div class="item">
           <h3>Multi-Branch Library Management System</h3>
           <p>Backend system for managing loans and reservations across multiple libraries.</p>
-          <a href="https://github.com/abrahamsharkey">Code →</a>
         </div>
-
-      </div>
-    </section>
-
-    <section>
-      <h2>Courses & Certifications</h2>
-      <div class="block">
-        <div class="item"><p>Introduction to Quantum Information — KAIST</p></div>
-        <div class="item"><p>Quantum Computing in Practice — IBM</p></div>
-        <div class="item"><p>Introduction to Internet of Things — Stanford</p></div>
-      </div>
-    </section>
-
-    <section>
-      <h2>Awards & Achievements</h2>
-      <div class="block">
-        <div class="item"><p>Independently published an app on the Apple App Store</p></div>
-        <div class="item"><p>94.5% — Innovation Project</p></div>
       </div>
     </section>
 
@@ -242,6 +236,16 @@
   </footer>
 
 </div>
+
+<script>
+  function toggleTheme() {
+    const current = document.documentElement.getAttribute("data-theme");
+    document.documentElement.setAttribute(
+      "data-theme",
+      current === "light" ? "dark" : "light"
+    );
+  }
+</script>
 
 </body>
 </html>
