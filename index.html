@@ -38,17 +38,13 @@
 
     .sidebar-header {
       display: block;
-      margin-bottom: 2.5rem; /* ✅ spacing now matches sections */
     }
 
     .profile-img {
       width: 100%;
-      height: auto;                /* ✅ prevent compression */
-      object-fit: cover;           /* ✅ preserve aspect ratio */
       border-radius: 16px;
       background: #ccc;
-      margin-bottom: 1.2rem;
-      max-width: 260px;
+      margin-bottom: 1.2rem; /* slightly reduced */
     }
 
     .name {
@@ -65,7 +61,7 @@
     .location {
       color: #777;
       font-size: 0.9rem;
-      margin-bottom: 0.8rem;
+      margin-bottom: 0.8rem; /* reduced */
     }
 
     .icon-links a {
@@ -75,7 +71,7 @@
       text-decoration: none;
       color: #111;
       font-size: 0.95rem;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.5rem; /* tighter */
     }
 
     .icon-links a span {
@@ -148,7 +144,7 @@
       margin-top: 4rem;
     }
 
-    /* Mobile */
+    /* ✅ MOBILE ADJUSTMENT ONLY */
     @media (max-width: 900px) {
       .container {
         grid-template-columns: 1fr;
@@ -160,16 +156,13 @@
 
       .sidebar-header {
         display: flex;
-        align-items: center;
-        gap: 1.2rem;
-        margin-bottom: 2.5rem; /* ✅ consistent spacing */
+        align-items: stretch; /* makes text block match image height */
+        gap: 1rem;
+        margin-bottom: 1.2rem;
       }
 
       .profile-img {
         width: 120px;
-        max-width: 120px;
-        height: auto;           /* ✅ no compression */
-        object-fit: cover;
         margin-bottom: 0;
         flex-shrink: 0;
       }
@@ -177,7 +170,7 @@
       .sidebar-header > div {
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: center; /* vertically balances name + icons */
       }
     }
   </style>
@@ -185,24 +178,35 @@
 
 <body>
   <div class="container">
+    <!-- Sidebar -->
     <aside class="sidebar">
       <div class="sidebar-header">
         <img src="profile.png" alt="Profile photo" class="profile-img" />
+
         <div>
           <div class="name">Abraham Sharkey</div>
           <div class="subtitle">Computer Science Student</div>
           <div class="location">Birmingham, UK</div>
 
           <div class="icon-links">
-            <a href="resume.pdf" target="_blank"><i class="fa-regular fa-file"></i><span>CV</span></a>
-            <a href="https://github.com/abrahamsharkey" target="_blank"><i class="fa-brands fa-github"></i><span>GitHub</span></a>
-            <a href="https://linkedin.com/in/abrahamsharkey" target="_blank"><i class="fa-brands fa-linkedin"></i><span>LinkedIn</span></a>
-            <a href="mailto:abmsharkey@gmail.com"><i class="fa-regular fa-envelope"></i><span>Email</span></a>
+            <a href="resume.pdf" target="_blank">
+              <i class="fa-regular fa-file"></i><span>CV</span>
+            </a>
+            <a href="https://github.com/abrahamsharkey" target="_blank">
+              <i class="fa-brands fa-github"></i><span>GitHub</span>
+            </a>
+            <a href="https://linkedin.com/in/abrahamsharkey" target="_blank">
+              <i class="fa-brands fa-linkedin"></i><span>LinkedIn</span>
+            </a>
+            <a href="mailto:abmsharkey@gmail.com">
+              <i class="fa-regular fa-envelope"></i><span>Email</span>
+            </a>
           </div>
         </div>
       </div>
     </aside>
 
+    <!-- Main content -->
     <main>
       <section>
         <h2>About</h2>
@@ -217,6 +221,64 @@
             development, database modelling, and IoT-based systems, and I am increasingly
             drawn to research-oriented work at the intersection of systems and security.
           </span>
+        </div>
+      </section>
+
+      <section>
+        <h2>Selected Projects & Papers</h2>
+
+        <div class="card">
+          <strong>FlexShade — Smart Climate-Responsive Curtain System</strong>
+          <span>
+            IoT-based system integrating sensors and automation to optimise indoor
+            climate conditions.
+          </span>
+          <div class="pub-links">
+            <a href="flexshade.pdf" target="_blank">
+              <i class="fa-regular fa-file-pdf"></i> PDF
+            </a>
+            <a href="https://github.com/abrahamsharkey/flexshade" target="_blank">
+              <i class="fa-solid fa-code"></i> Code
+            </a>
+          </div>
+        </div>
+
+        <div class="card">
+          <strong>Library Loan Management System</strong>
+          <span>
+            Backend system for managing loans, returns, and reservations across
+            multiple libraries.
+          </span>
+          <div class="pub-links">
+            <a href="https://github.com/abrahamsharkey/library-loan-system" target="_blank">
+              <i class="fa-solid fa-code"></i> Code
+            </a>
+          </div>
+        </div>
+
+        <div class="card">
+          <strong>Interactive Library System (Object-Oriented Programming)</strong>
+          <span>
+            Object-oriented library management system developed in Java, focusing on
+            class design, encapsulation, inheritance, and polymorphism.
+          </span>
+          <div class="pub-links">
+            <a href="https://github.com/abrahamsharkey/interactive-library-system" target="_blank">
+              <i class="fa-solid fa-code"></i> Code
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Relevant Coursework</h2>
+        <div class="card">
+          <span>Data Structures & Algorithms</span>
+          <span>Operating Systems</span>
+          <span>Computer Networks</span>
+          <span>Databases & Backend Systems</span>
+          <span>Cyber Security Fundamentals</span>
+          <span>Object-Oriented Programming & Software Engineering</span>
         </div>
       </section>
 
