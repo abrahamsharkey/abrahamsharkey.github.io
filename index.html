@@ -38,17 +38,16 @@
 
     .sidebar-header {
       display: block;
-      margin-bottom: 2rem; /* ✅ reduced gap */
+      margin-bottom: 1.6rem;
     }
 
     .profile-img {
       width: 100%;
-      height: auto;
       aspect-ratio: 3 / 4;
       object-fit: cover;
       border-radius: 16px;
       background: #ccc;
-      margin-bottom: 1.2rem;
+      margin-bottom: 1rem;
     }
 
     .name {
@@ -148,10 +147,11 @@
       margin-top: 4rem;
     }
 
-    /* ✅ MOBILE ONLY ADJUSTMENTS */
+    /* MOBILE FIXES ONLY */
     @media (max-width: 900px) {
       .container {
         grid-template-columns: 1fr;
+        gap: 1.6rem; /* fixes large gap before About */
       }
 
       .sidebar {
@@ -162,12 +162,11 @@
         display: flex;
         align-items: center;
         gap: 1.2rem;
-        margin-bottom: 1.6rem; /* ✅ tighter gap before About */
+        margin-bottom: 1.6rem;
       }
 
       .profile-img {
-        width: 140px;          /* ✅ slightly wider */
-        height: auto;
+        width: 140px;
         margin-bottom: 0;
         flex-shrink: 0;
       }
@@ -217,14 +216,16 @@
         <h2>About</h2>
         <div class="card">
           <span>
-            Computer Science undergraduate with interests in cyber security, cryptography,
-            and quantum computing. I am particularly interested in secure systems,
-            correctness, and how emerging computing models may affect privacy and reliability.
+            Computer Science undergraduate with interests in cyber security,
+            cryptography, and quantum computing. I am particularly interested
+            in secure systems, correctness, and how emerging computing models
+            may affect privacy and reliability.
           </span>
           <span>
-            Through coursework and projects, I have developed experience in backend
-            development, database modelling, and IoT-based systems, and I am increasingly
-            drawn to research-oriented work at the intersection of systems and security.
+            Through coursework and projects, I have developed experience in
+            backend development, database modelling, and IoT-based systems,
+            and I am increasingly drawn to research-oriented work at the
+            intersection of systems and security.
           </span>
         </div>
       </section>
@@ -235,8 +236,8 @@
         <div class="card">
           <strong>FlexShade — Smart Climate-Responsive Curtain System</strong>
           <span>
-            IoT-based system integrating sensors and automation to optimise indoor
-            climate conditions.
+            IoT-based system integrating sensors and automation to optimise
+            indoor climate conditions.
           </span>
           <div class="pub-links">
             <a href="flexshade.pdf" target="_blank">
@@ -264,8 +265,9 @@
         <div class="card">
           <strong>Interactive Library System (Object-Oriented Programming)</strong>
           <span>
-            Object-oriented library management system developed in Java, focusing on
-            class design, encapsulation, inheritance, and polymorphism.
+            Object-oriented library management system developed in Java,
+            focusing on class design, encapsulation, inheritance, and
+            polymorphism.
           </span>
           <div class="pub-links">
             <a href="https://github.com/abrahamsharkey/interactive-library-system" target="_blank">
