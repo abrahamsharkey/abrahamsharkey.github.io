@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Abraham Sharkey | Computer Science</title>
 
+  <!-- Font Awesome Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+
   <style>
     :root {
       --bg: #0b0f14;
@@ -41,12 +47,19 @@
       gap: 3rem;
     }
 
-    /* LEFT SIDEBAR */
+    /* SIDEBAR (STICKY) */
+    .sidebar {
+      position: sticky;
+      top: 2rem;
+      align-self: start;
+    }
+
     .sidebar img {
       width: 100%;
       border-radius: 12px;
       border: 1px solid var(--border);
       margin-bottom: 1rem;
+      background: var(--bg);
     }
 
     .sidebar h1 {
@@ -60,17 +73,27 @@
       margin: 0.2rem 0;
     }
 
+    /* ICON LINKS */
     .icons {
       margin-top: 1rem;
       display: flex;
-      gap: 0.8rem;
-      font-size: 0.9rem;
+      gap: 0.6rem;
+      flex-wrap: wrap;
     }
 
     .icons a {
       border: 1px solid var(--border);
-      padding: 0.3rem 0.6rem;
+      padding: 0.45rem 0.6rem;
       border-radius: 6px;
+      font-size: 1rem;
+      color: var(--text);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .icons a:hover {
+      background: var(--panel);
     }
 
     /* MAIN CONTENT */
@@ -123,6 +146,10 @@
       .container {
         grid-template-columns: 1fr;
       }
+
+      .sidebar {
+        position: static;
+      }
     }
   </style>
 </head>
@@ -140,10 +167,21 @@
     <p>Birmingham, UK</p>
 
     <div class="icons">
-      <a href="resume.pdf" target="_blank">CV</a>
-      <a href="https://github.com/abrahamsharkey" target="_blank">GitHub</a>
-      <a href="https://www.linkedin.com/in/abrahamsharkey" target="_blank">LinkedIn</a>
-      <a href="mailto:abmsharkey@gmail.com">Email</a>
+      <a href="resume.pdf" target="_blank" title="CV">
+        <i class="fa-solid fa-file-lines"></i>
+      </a>
+
+      <a href="https://github.com/abrahamsharkey" target="_blank" title="GitHub">
+        <i class="fa-brands fa-github"></i>
+      </a>
+
+      <a href="https://www.linkedin.com/in/abrahamsharkey" target="_blank" title="LinkedIn">
+        <i class="fa-brands fa-linkedin"></i>
+      </a>
+
+      <a href="mailto:abmsharkey@gmail.com" title="Email">
+        <i class="fa-solid fa-envelope"></i>
+      </a>
     </div>
   </aside>
 
@@ -183,34 +221,17 @@
     <section>
       <h2>Courses & Certifications</h2>
       <div class="block">
-
-        <div class="item">
-          <p>Introduction to Quantum Information — KAIST</p>
-        </div>
-
-        <div class="item">
-          <p>Quantum Computing in Practice — IBM</p>
-        </div>
-
-        <div class="item">
-          <p>Introduction to Internet of Things — Stanford University</p>
-        </div>
-
+        <div class="item"><p>Introduction to Quantum Information — KAIST</p></div>
+        <div class="item"><p>Quantum Computing in Practice — IBM</p></div>
+        <div class="item"><p>Introduction to Internet of Things — Stanford</p></div>
       </div>
     </section>
 
     <section>
       <h2>Awards & Achievements</h2>
       <div class="block">
-
-        <div class="item">
-          <p>Independently published a fully functional app on the Apple App Store</p>
-        </div>
-
-        <div class="item">
-          <p>Final Grade: 94.5% — Innovation Project</p>
-        </div>
-
+        <div class="item"><p>Independently published an app on the Apple App Store</p></div>
+        <div class="item"><p>94.5% — Innovation Project</p></div>
       </div>
     </section>
 
