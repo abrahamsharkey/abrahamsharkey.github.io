@@ -38,14 +38,14 @@
 
     .sidebar-header {
       display: block;
-      margin-bottom: 2.5rem; /* ✅ spacing now matches sections */
+      margin-bottom: 2rem; /* ✅ reduced gap */
     }
 
     .profile-img {
       width: 100%;
-      height: auto;                 /* ✅ prevent compression */
-      aspect-ratio: 3 / 4;          /* ✅ stable proportions */
-      object-fit: cover;            /* ✅ no stretching */
+      height: auto;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
       border-radius: 16px;
       background: #ccc;
       margin-bottom: 1.2rem;
@@ -148,7 +148,7 @@
       margin-top: 4rem;
     }
 
-    /* Mobile */
+    /* ✅ MOBILE ONLY ADJUSTMENTS */
     @media (max-width: 900px) {
       .container {
         grid-template-columns: 1fr;
@@ -160,13 +160,13 @@
 
       .sidebar-header {
         display: flex;
-        align-items: stretch;
-        gap: 1rem;
-        margin-bottom: 2.5rem; /* ✅ consistent spacing */
+        align-items: center;
+        gap: 1.2rem;
+        margin-bottom: 1.6rem; /* ✅ tighter gap before About */
       }
 
       .profile-img {
-        width: 120px;
+        width: 140px;          /* ✅ slightly wider */
         height: auto;
         margin-bottom: 0;
         flex-shrink: 0;
@@ -211,7 +211,7 @@
       </div>
     </aside>
 
-    <!-- Main -->
+    <!-- Main content -->
     <main>
       <section>
         <h2>About</h2>
