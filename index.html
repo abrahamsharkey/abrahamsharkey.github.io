@@ -38,13 +38,17 @@
 
     .sidebar-header {
       display: block;
+      margin-bottom: 2.5rem; /* ✅ spacing now matches sections */
     }
 
     .profile-img {
       width: 100%;
+      height: auto;                 /* ✅ prevent compression */
+      aspect-ratio: 3 / 4;          /* ✅ stable proportions */
+      object-fit: cover;            /* ✅ no stretching */
       border-radius: 16px;
       background: #ccc;
-      margin-bottom: 1.2rem; /* slightly reduced */
+      margin-bottom: 1.2rem;
     }
 
     .name {
@@ -61,7 +65,7 @@
     .location {
       color: #777;
       font-size: 0.9rem;
-      margin-bottom: 0.8rem; /* reduced */
+      margin-bottom: 0.8rem;
     }
 
     .icon-links a {
@@ -71,7 +75,7 @@
       text-decoration: none;
       color: #111;
       font-size: 0.95rem;
-      margin-bottom: 0.5rem; /* tighter */
+      margin-bottom: 0.5rem;
     }
 
     .icon-links a span {
@@ -144,7 +148,7 @@
       margin-top: 4rem;
     }
 
-    /* ✅ MOBILE ADJUSTMENT ONLY */
+    /* Mobile */
     @media (max-width: 900px) {
       .container {
         grid-template-columns: 1fr;
@@ -156,13 +160,14 @@
 
       .sidebar-header {
         display: flex;
-        align-items: stretch; /* makes text block match image height */
+        align-items: stretch;
         gap: 1rem;
-        margin-bottom: 1.2rem;
+        margin-bottom: 2.5rem; /* ✅ consistent spacing */
       }
 
       .profile-img {
         width: 120px;
+        height: auto;
         margin-bottom: 0;
         flex-shrink: 0;
       }
@@ -170,7 +175,7 @@
       .sidebar-header > div {
         display: flex;
         flex-direction: column;
-        justify-content: center; /* vertically balances name + icons */
+        justify-content: center;
       }
     }
   </style>
@@ -206,7 +211,7 @@
       </div>
     </aside>
 
-    <!-- Main content -->
+    <!-- Main -->
     <main>
       <section>
         <h2>About</h2>
