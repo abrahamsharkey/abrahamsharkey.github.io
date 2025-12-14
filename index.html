@@ -10,21 +10,21 @@
 
   <style>
     :root {
-      --bg: #f5f7fa;
-      --text: #111827;
-      --muted: #6b7280;
-      --card-bg: #ffffff;
-      --border: #e5e7eb;
-      --link: #2563eb;
-    }
-
-    body.dark {
       --bg: #0b0f14;
       --text: #e5e7eb;
       --muted: #9ca3af;
-      --card-bg: #111827;
+      --card: #111827;
       --border: #1f2937;
-      --link: #60a5fa;
+      --accent: #e5e7eb;
+    }
+
+    body.light {
+      --bg: #f5f7fa;
+      --text: #111827;
+      --muted: #6b7280;
+      --card: #ffffff;
+      --border: #e5e7eb;
+      --accent: #111827;
     }
 
     * {
@@ -40,24 +40,25 @@
     }
 
     a {
-      color: var(--link);
+      color: var(--text);
       text-decoration: none;
+      border-bottom: 1px solid var(--border);
     }
 
     a:hover {
-      text-decoration: underline;
+      opacity: 0.8;
     }
 
     .container {
       max-width: 1100px;
       margin: auto;
-      padding: 2rem;
+      padding: 2.5rem 2rem;
       display: grid;
-      grid-template-columns: 280px 1fr;
+      grid-template-columns: 260px 1fr;
       gap: 2.5rem;
     }
 
-    /* LEFT COLUMN (STICKY PROFILE) */
+    /* Sidebar */
     .sidebar {
       position: sticky;
       top: 2rem;
@@ -65,73 +66,68 @@
     }
 
     .profile-img {
-      width: 190px;
+      width: 180px;
       border-radius: 14px;
-      background: #e5e7eb;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      background: #d1d5db;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.35);
       margin-bottom: 1rem;
     }
 
     .name {
-      font-size: 1.6rem;
+      font-size: 1.5rem;
       font-weight: 700;
-      margin-bottom: 0.2rem;
     }
 
-    .role {
-      color: var(--muted);
-      margin-bottom: 0.2rem;
-    }
-
+    .role,
     .location {
       color: var(--muted);
       font-size: 0.95rem;
-      margin-bottom: 1rem;
     }
 
     .icon-links {
+      margin-top: 1.2rem;
       display: flex;
       flex-direction: column;
       gap: 0.6rem;
-      margin-top: 1rem;
+      font-size: 0.95rem;
     }
 
     .icon-links a {
       display: flex;
       align-items: center;
       gap: 0.6rem;
-      font-size: 0.95rem;
+      border: none;
     }
 
-    /* RIGHT COLUMN */
+    /* Main */
     section {
       margin-bottom: 2rem;
     }
 
     h2 {
-      font-size: 1.4rem;
+      font-size: 1.35rem;
       margin-bottom: 0.8rem;
     }
 
     .card {
-      background: var(--card-bg);
+      background: var(--card);
       border: 1px solid var(--border);
       border-radius: 14px;
       padding: 1.4rem;
     }
 
-    .project-title {
+    .item {
+      margin-bottom: 1.2rem;
+    }
+
+    .item-title {
       font-weight: 600;
       margin-bottom: 0.2rem;
     }
 
-    ul {
-      padding-left: 1.2rem;
-      margin: 0;
-    }
-
-    li {
-      margin-bottom: 0.5rem;
+    .muted {
+      color: var(--muted);
+      font-size: 0.9rem;
     }
 
     footer {
@@ -143,17 +139,20 @@
       font-size: 0.9rem;
     }
 
-    /* Toggle */
-    .toggle {
+    /* Theme toggle (icon only) */
+    .theme-toggle {
       position: fixed;
       top: 1rem;
       right: 1rem;
-      background: var(--card-bg);
+      background: var(--card);
       border: 1px solid var(--border);
-      padding: 0.4rem 0.7rem;
-      border-radius: 20px;
+      border-radius: 50%;
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       cursor: pointer;
-      font-size: 0.85rem;
     }
 
     @media (max-width: 900px) {
@@ -167,13 +166,15 @@
   </style>
 </head>
 
-<body>
+<body class="light">
 
-<button class="toggle" onclick="toggleTheme()">Toggle theme</button>
+<div class="theme-toggle" onclick="toggleTheme()">
+  <i id="themeIcon" class="fa-solid fa-moon"></i>
+</div>
 
 <div class="container">
 
-  <!-- SIDEBAR -->
+  <!-- Sidebar -->
   <aside class="sidebar">
     <img src="profile.png" alt="Profile photo of Abraham Sharkey" class="profile-img">
 
@@ -189,7 +190,7 @@
     </div>
   </aside>
 
-  <!-- MAIN CONTENT -->
+  <!-- Main content -->
   <main>
 
     <section>
@@ -204,39 +205,39 @@
     <section>
       <h2>Selected Projects</h2>
       <div class="card">
-        <div class="project-title">FlexShade — Smart Climate-Responsive Curtain System</div>
-        IoT system integrating sensors and automation for indoor climate optimisation.
-        <br><a href="#">Repository</a>
 
-        <br><br>
+        <div class="item">
+          <div class="item-title">FlexShade — Smart Climate-Responsive Curtain System</div>
+          IoT system integrating sensors and automation for indoor climate optimisation.
+          <br><a href="#">Repository</a>
+        </div>
 
-        <div class="project-title">Multi-Branch Library Management System</div>
-        Backend system for managing loans and reservations across multiple libraries.
-        <br><a href="#">Repository</a>
+        <div class="item">
+          <div class="item-title">Multi-Branch Library Management System</div>
+          Backend system for managing loans and reservations across multiple libraries.
+          <br><a href="#">Repository</a>
+        </div>
+
       </div>
     </section>
 
     <section>
       <h2>Relevant Coursework</h2>
       <div class="card">
-        <ul>
-          <li>Data Structures & Algorithms</li>
-          <li>Operating Systems</li>
-          <li>Computer Networks</li>
-          <li>Databases & Backend Systems</li>
-          <li>Cyber Security Fundamentals</li>
-          <li>Object-Oriented Programming & Software Engineering</li>
-        </ul>
+        Data Structures & Algorithms<br>
+        Operating Systems<br>
+        Computer Networks<br>
+        Databases & Backend Systems<br>
+        Cyber Security Fundamentals<br>
+        Object-Oriented Programming & Software Engineering
       </div>
     </section>
 
     <section>
       <h2>Awards & Achievements</h2>
       <div class="card">
-        <ul>
-          <li>Innovation Project — FlexShade (Smart Climate-Responsive System)</li>
-          <li>Strong academic performance in Computer Science modules</li>
-        </ul>
+        Innovation Project — FlexShade (Smart Climate-Responsive System)<br>
+        Strong academic performance in Computer Science modules
       </div>
     </section>
 
@@ -249,7 +250,11 @@
 
 <script>
   function toggleTheme() {
-    document.body.classList.toggle("dark");
+    document.body.classList.toggle("light");
+    const icon = document.getElementById("themeIcon");
+    icon.className = document.body.classList.contains("light")
+      ? "fa-solid fa-moon"
+      : "fa-solid fa-sun";
   }
 </script>
 
