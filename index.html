@@ -10,7 +10,6 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     crossorigin="anonymous"
-    referrerpolicy="no-referrer"
   />
 
   <style>
@@ -37,13 +36,15 @@
       align-self: start;
     }
 
+    .sidebar-header {
+      display: block;
+    }
+
     .profile-img {
       width: 100%;
-      max-width: 260px;            /* ✅ NEW: prevents oversizing */
       border-radius: 16px;
       background: #ccc;
       margin-bottom: 1.5rem;
-      display: block;
     }
 
     .name {
@@ -143,7 +144,7 @@
       margin-top: 4rem;
     }
 
-    /* ✅ Tablet & mobile fixes */
+    /* ✅ MOBILE CHANGE ONLY */
     @media (max-width: 900px) {
       .container {
         grid-template-columns: 1fr;
@@ -153,15 +154,17 @@
         position: static;
       }
 
-      .profile-img {
-        max-width: 200px;           /* ✅ NEW: smaller image on tablets */
-        margin-left: 0;             /* stays aligned with text */
+      .sidebar-header {
+        display: flex;
+        align-items: center;
+        gap: 1.2rem;
+        margin-bottom: 1.5rem;
       }
-    }
 
-    @media (max-width: 500px) {
       .profile-img {
-        max-width: 160px;           /* ✅ NEW: mobile size */
+        width: 120px;
+        margin-bottom: 0;
+        flex-shrink: 0;
       }
     }
   </style>
@@ -171,25 +174,29 @@
   <div class="container">
     <!-- Sidebar -->
     <aside class="sidebar">
-      <img src="profile.png" alt="Profile photo" class="profile-img" />
+      <div class="sidebar-header">
+        <img src="profile.png" alt="Profile photo" class="profile-img" />
 
-      <div class="name">Abraham Sharkey</div>
-      <div class="subtitle">Computer Science Student</div>
-      <div class="location">Birmingham, UK</div>
+        <div>
+          <div class="name">Abraham Sharkey</div>
+          <div class="subtitle">Computer Science Student</div>
+          <div class="location">Birmingham, UK</div>
 
-      <div class="icon-links">
-        <a href="resume.pdf" target="_blank">
-          <i class="fa-regular fa-file"></i><span>CV</span>
-        </a>
-        <a href="https://github.com/abrahamsharkey" target="_blank">
-          <i class="fa-brands fa-github"></i><span>GitHub</span>
-        </a>
-        <a href="https://linkedin.com/in/abrahamsharkey" target="_blank">
-          <i class="fa-brands fa-linkedin"></i><span>LinkedIn</span>
-        </a>
-        <a href="mailto:abmsharkey@gmail.com">
-          <i class="fa-regular fa-envelope"></i><span>Email</span>
-        </a>
+          <div class="icon-links">
+            <a href="resume.pdf" target="_blank">
+              <i class="fa-regular fa-file"></i><span>CV</span>
+            </a>
+            <a href="https://github.com/abrahamsharkey" target="_blank">
+              <i class="fa-brands fa-github"></i><span>GitHub</span>
+            </a>
+            <a href="https://linkedin.com/in/abrahamsharkey" target="_blank">
+              <i class="fa-brands fa-linkedin"></i><span>LinkedIn</span>
+            </a>
+            <a href="mailto:abmsharkey@gmail.com">
+              <i class="fa-regular fa-envelope"></i><span>Email</span>
+            </a>
+          </div>
+        </div>
       </div>
     </aside>
 
