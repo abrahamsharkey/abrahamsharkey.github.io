@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Abraham Sharkey</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abraham Sharkey | Computer Science Student</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- Font Awesome -->
   <link
@@ -12,132 +12,94 @@
   />
 
   <style>
-    :root {
-      --bg: #f6f7f9;
-      --card: #ffffff;
-      --text: #111827;
-      --muted: #6b7280;
-      --border: #e5e7eb;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
     body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
       margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        Roboto, Ubuntu, "Helvetica Neue", Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
+      background: #f6f7f9;
+      color: #111;
     }
 
     .container {
       max-width: 1100px;
-      margin: 3rem auto;
-      padding: 0 1.5rem;
+      margin: 0 auto;
+      padding: 40px 24px;
       display: grid;
-      grid-template-columns: 260px 1fr;
-      gap: 3rem;
+      grid-template-columns: 280px 1fr;
+      gap: 48px;
     }
 
     /* Sidebar */
     .sidebar {
       position: sticky;
-      top: 2rem;
+      top: 32px;
       align-self: start;
     }
 
-    .profile-img {
-      width: 100%;
-      border-radius: 14px;
-      background: #d1d1d1;
-      overflow: hidden;
-      margin-bottom: 1.5rem;
+    .profile-image {
+      background: #ccc;
+      border-radius: 16px;
+      padding: 16px;
+      text-align: center;
     }
 
-    .profile-img img {
+    .profile-image img {
       width: 100%;
-      display: block;
+      max-width: 240px;
+      height: auto;
+      border-radius: 12px;
     }
 
     .name {
-      font-size: 1.4rem;
+      font-size: 22px;
       font-weight: 600;
-      margin-bottom: 0.25rem;
+      margin-top: 16px;
     }
 
     .role {
-      font-size: 0.95rem;
-      color: var(--muted);
+      color: #555;
+      margin-top: 4px;
     }
 
     .location {
-      font-size: 0.9rem;
-      color: var(--muted);
-      margin-bottom: 1.5rem;
+      color: #777;
+      font-size: 14px;
+      margin-top: 4px;
     }
 
     .links {
+      margin-top: 16px;
       display: flex;
       flex-direction: column;
-      gap: 0.6rem;
+      gap: 10px;
+      font-size: 15px;
     }
 
-    /* Sidebar link style — FIXED */
     .links a {
-      display: inline-flex;
+      color: inherit;
+      display: flex;
       align-items: center;
-      gap: 0.55rem;
-      text-decoration: none;
-      color: var(--text);
-      font-size: 0.95rem;
+      gap: 10px;
     }
 
-    .links a i {
-      width: 16px;
-      text-align: center;
-      color: var(--text);
-    }
-
-    /* Only underline TEXT on hover */
-    .links a span {
-      text-decoration: none;
-    }
-
-    .links a:hover span {
+    .links a:hover {
       text-decoration: underline;
     }
 
     /* Main content */
-    section {
-      margin-bottom: 2.5rem;
-    }
-
     h2 {
-      font-size: 1.4rem;
-      margin-bottom: 0.8rem;
+      margin-top: 0;
     }
 
     .card {
-      background: var(--card);
-      border: 1px solid var(--border);
+      background: #fff;
       border-radius: 12px;
-      padding: 1.25rem 1.4rem;
+      padding: 24px;
+      margin-bottom: 32px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
     }
 
-    .card p {
-      margin: 0 0 0.8rem 0;
-      line-height: 1.6;
-    }
-
-    .card p:last-child {
-      margin-bottom: 0;
-    }
-
-    /* Projects / Papers */
     .project {
-      margin-bottom: 1.4rem;
+      margin-bottom: 24px;
     }
 
     .project:last-child {
@@ -145,46 +107,42 @@
     }
 
     .project strong {
-      display: block;
-      margin-bottom: 0.3rem;
+      font-size: 16px;
     }
 
-    .project-desc {
-      color: #374151;
-      margin-bottom: 0.6rem;
+    .project p {
+      margin: 6px 0 10px;
+      color: #333;
     }
 
-    .pub-links {
+    .project-links {
       display: flex;
-      gap: 0.6rem;
+      gap: 12px;
+      flex-wrap: wrap;
     }
 
-    /* Buttons — FIXED hover shift */
-    .pub-links a {
+    .project-links a {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 6px 10px;
+      font-size: 14px;
       display: inline-flex;
       align-items: center;
-      gap: 0.35rem;
-      font-size: 0.85rem;
-      padding: 0.35rem 0.65rem;
-      border-radius: 6px;
-      border: 1px solid var(--border); /* always present */
-      text-decoration: none;
-      color: var(--text);
-      background: #f9fafb;
+      gap: 6px;
     }
 
-    .pub-links a:hover {
-      background: #f3f4f6;
+    .project-links a:hover {
+      background: #f1f1f1;
     }
 
     footer {
-      border-top: 1px solid var(--border);
-      padding-top: 1.5rem;
-      font-size: 0.85rem;
-      color: var(--muted);
       text-align: center;
+      margin-top: 40px;
+      color: #777;
+      font-size: 14px;
     }
 
+    /* Mobile */
     @media (max-width: 900px) {
       .container {
         grid-template-columns: 1fr;
@@ -193,15 +151,19 @@
       .sidebar {
         position: static;
       }
+
+      .profile-image img {
+        max-width: 200px;
+      }
     }
   </style>
 </head>
 
 <body>
-  <main class="container">
+  <div class="container">
     <!-- Sidebar -->
     <aside class="sidebar">
-      <div class="profile-img">
+      <div class="profile-image">
         <img src="profile.png" alt="Abraham Sharkey" />
       </div>
 
@@ -209,115 +171,88 @@
       <div class="role">Computer Science Student</div>
       <div class="location">Birmingham, UK</div>
 
-      <nav class="links">
-        <a href="resume.pdf" target="_blank" rel="noopener">
-          <i class="fa-regular fa-file"></i>
-          <span>CV</span>
+      <div class="links">
+        <a href="cv.pdf" target="_blank" rel="noopener">
+          <i class="fa-solid fa-file-pdf"></i> CV
         </a>
-
         <a href="https://github.com/abrahamsharkey" target="_blank" rel="noopener">
-          <i class="fa-brands fa-github"></i>
-          <span>GitHub</span>
+          <i class="fa-brands fa-github"></i> GitHub
         </a>
-
-        <a
-          href="https://linkedin.com/in/abrahamsharkey"
-          target="_blank"
-          rel="noopener"
-        >
-          <i class="fa-brands fa-linkedin"></i>
-          <span>LinkedIn</span>
+        <a href="https://linkedin.com/in/abrahamsharkey" target="_blank" rel="noopener">
+          <i class="fa-brands fa-linkedin"></i> LinkedIn
         </a>
-
         <a href="mailto:abmsharkey@gmail.com">
-          <i class="fa-regular fa-envelope"></i>
-          <span>Email</span>
+          <i class="fa-solid fa-envelope"></i> Email
         </a>
-      </nav>
+      </div>
     </aside>
 
-    <!-- Main content -->
-    <div>
-      <section>
-        <h2>About</h2>
-        <div class="card">
+    <!-- Main -->
+    <main>
+      <h2>About</h2>
+      <div class="card">
+        <p>
+          Computer Science undergraduate with interests in cyber security,
+          cryptography, and quantum computing. I am particularly interested in
+          secure systems, correctness, and how emerging computing models may
+          affect privacy and reliability.
+        </p>
+        <p>
+          Through coursework and projects, I have developed experience in backend
+          development, database modelling, and IoT-based systems, and I am
+          increasingly drawn to research-oriented work at the intersection of
+          systems and security.
+        </p>
+      </div>
+
+      <h2>Selected Projects & Papers</h2>
+      <div class="card">
+        <div class="project">
+          <strong>FlexShade — Smart Climate-Responsive Curtain System</strong>
           <p>
-            Computer Science undergraduate with interests in cyber security,
-            cryptography, and quantum computing. I am particularly interested in
-            secure systems, correctness, and how emerging computing models may
-            affect privacy and reliability.
+            IoT-based system integrating sensors and automation to optimise
+            indoor climate conditions.
           </p>
-          <p>
-            Through coursework and projects, I have developed experience in
-            backend development, database modelling, and IoT-based systems, and
-            I am increasingly drawn to research-oriented work at the
-            intersection of systems and security.
-          </p>
-        </div>
-      </section>
-
-      <section>
-        <h2>Selected Projects &amp; Papers</h2>
-        <div class="card">
-          <div class="project">
-            <strong>FlexShade — Smart Climate-Responsive Curtain System</strong>
-            <div class="project-desc">
-              IoT-based system integrating sensors and automation to optimise
-              indoor climate conditions.
-            </div>
-            <div class="pub-links">
-              <a href="#" target="_blank" rel="noopener">
-                <i class="fa-regular fa-file-pdf"></i> PDF
-              </a>
-              <a
-                href="https://github.com/abrahamsharkey/flexshade"
-                target="_blank"
-                rel="noopener"
-              >
-                <i class="fa-solid fa-code"></i> Code
-              </a>
-            </div>
-          </div>
-
-          <div class="project">
-            <strong>Library Loan Management System</strong>
-            <div class="project-desc">
-              Backend system for managing loans, returns, and reservations
-              across multiple libraries.
-            </div>
-            <div class="pub-links">
-              <a
-                href="https://github.com/abrahamsharkey/library-loan-system"
-                target="_blank"
-                rel="noopener"
-              >
-                <i class="fa-solid fa-code"></i> Code
-              </a>
-            </div>
-          </div>
-
-          <div class="project">
-            <strong>Interactive Library System (Object-Oriented Programming)</strong>
-            <div class="project-desc">
-              Object-oriented library management system developed in Java,
-              focusing on class design, encapsulation, inheritance, and
-              polymorphism.
-            </div>
-            <div class="pub-links">
-              <a
-                href="https://github.com/abrahamsharkey/interactive-library-system"
-                target="_blank"
-                rel="noopener"
-              >
-                <i class="fa-solid fa-code"></i> Code
-              </a>
-            </div>
+          <div class="project-links">
+            <a href="flexshade.pdf" target="_blank">
+              <i class="fa-solid fa-file-pdf"></i> PDF
+            </a>
+            <a href="https://github.com/abrahamsharkey/flexshade" target="_blank">
+              <i class="fa-solid fa-code"></i> Code
+            </a>
           </div>
         </div>
-      </section>
+
+        <div class="project">
+          <strong>Library Loan Management System</strong>
+          <p>
+            Backend system for managing loans, returns, and reservations across
+            multiple libraries.
+          </p>
+          <div class="project-links">
+            <a href="https://github.com/abrahamsharkey/library-loan-system" target="_blank">
+              <i class="fa-solid fa-code"></i> Code
+            </a>
+          </div>
+        </div>
+
+        <div class="project">
+          <strong>Interactive Library System (Object-Oriented Programming)</strong>
+          <p>
+            Object-oriented library management system developed in Java,
+            focusing on class design, encapsulation, inheritance, and
+            polymorphism.
+          </p>
+          <div class="project-links">
+            <a href="https://github.com/abrahamsharkey/interactive-library-system" target="_blank">
+              <i class="fa-solid fa-code"></i> Code
+            </a>
+          </div>
+        </div>
+      </div>
 
       <footer>© 2025 Abraham Sharkey</footer>
-    </div>
-  </main>
+    </main>
+  </div>
 </body>
 </html>
