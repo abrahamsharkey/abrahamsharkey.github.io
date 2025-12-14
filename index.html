@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Abraham Sharkey | Computer Science</title>
 
-  <!-- Font Awesome -->
+  <!-- Font Awesome (ONLY for GitHub / LinkedIn / Code icons) -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -105,24 +105,25 @@
       text-decoration: underline;
     }
 
+    /* Academic-style badges */
     .pub-links {
       margin-top: 0.6rem;
     }
 
-    .pub-links a {
+    .badge {
       display: inline-flex;
       align-items: center;
       gap: 0.35rem;
       margin-right: 0.6rem;
-      padding: 0.25rem 0.55rem;
-      font-size: 0.85rem;
+      padding: 0.25rem 0.6rem;
+      font-size: 0.8rem;
       border: 1px solid #ccc;
       border-radius: 6px;
       background: #f5f5f5;
       color: #333;
     }
 
-    .pub-links a:hover {
+    .badge:hover {
       background: #e9e9e9;
     }
 
@@ -159,7 +160,7 @@
 
       <div class="icon-links">
         <a href="resume.pdf" target="_blank" rel="noopener noreferrer">
-          <i class="fa-solid fa-file-pdf"></i> CV (PDF)
+          <span class="badge">PDF</span> CV
         </a>
         <a
           href="https://github.com/abrahamsharkey"
@@ -213,14 +214,14 @@
 
           <div class="pub-links">
             <a href="flexshade.pdf" target="_blank" rel="noopener noreferrer">
-              <i class="fa-solid fa-file-pdf"></i> PDF
+              <span class="badge">PDF</span>
             </a>
             <a
               href="https://github.com/abrahamsharkey/flexshade"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <i class="fa-solid fa-code"></i> Code
+              <span class="badge"><i class="fa-solid fa-code"></i> Code</span>
             </a>
           </div>
         </div>
@@ -229,8 +230,7 @@
           <strong>Library Loan Management System</strong><br />
           <span>
             Backend system for managing loans, returns, and reservations across
-            multiple libraries, focusing on relational database design and REST
-            APIs.
+            multiple libraries.
           </span>
 
           <div class="pub-links">
@@ -239,7 +239,7 @@
               target="_blank"
               rel="noopener noreferrer"
             >
-              <i class="fa-solid fa-code"></i> Code
+              <span class="badge"><i class="fa-solid fa-code"></i> Code</span>
             </a>
           </div>
         </div>
@@ -247,10 +247,8 @@
         <div class="card">
           <strong>Interactive Library System (Object-Oriented Programming)</strong><br />
           <span>
-            Object-oriented library management system developed in Java,
-            focusing on class design, encapsulation, inheritance, and
-            polymorphism. Includes member management, item lending, and basic
-            interaction workflows.
+            Java-based object-oriented library system focusing on class design,
+            encapsulation, inheritance, and polymorphism.
           </span>
 
           <div class="pub-links">
@@ -259,7 +257,7 @@
               target="_blank"
               rel="noopener noreferrer"
             >
-              <i class="fa-solid fa-code"></i> Code
+              <span class="badge"><i class="fa-solid fa-code"></i> Code</span>
             </a>
           </div>
         </div>
