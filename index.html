@@ -13,15 +13,14 @@
 
   <style>
     :root {
-      --bg: #f6f7f9;
+      --bg: #f7f8fa;
       --card: #ffffff;
       --text: #111111;
-      --muted: #5f6670;
-      --soft: #8b919a;
+      --muted: #5b616b;
+      --soft: #7a818c;
       --border: #e5e7eb;
-      --hover: #f1f3f5;
-      --accent: #111111;
-      --shadow: 0 0 0 1px rgba(17, 17, 17, 0.06);
+      --hover: #f2f3f5;
+      --shadow: 0 0 0 1px #e6e8eb;
       --radius: 16px;
     }
 
@@ -60,10 +59,14 @@
       top: 2rem;
     }
 
-    .sidebar-card {
+    .sidebar-card,
+    .card {
       background: var(--card);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
+    }
+
+    .sidebar-card {
       padding: 1.2rem;
     }
 
@@ -72,13 +75,13 @@
       aspect-ratio: 3 / 4;
       object-fit: cover;
       border-radius: 14px;
-      background: #d8d8d8;
+      background: #d5d5d5;
       display: block;
       margin-bottom: 1rem;
     }
 
     .name {
-      font-size: 1.6rem;
+      font-size: 1.7rem;
       font-weight: 700;
       line-height: 1.2;
       margin-bottom: 0.25rem;
@@ -99,15 +102,18 @@
     .primary-link {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 0.55rem;
+      width: 100%;
       text-decoration: none;
-      background: var(--accent);
-      color: #fff;
-      padding: 0.7rem 0.95rem;
+      background: #111111;
+      color: #ffffff;
+      padding: 0.78rem 1rem;
       border-radius: 10px;
       font-size: 0.95rem;
       font-weight: 600;
       margin-bottom: 1rem;
+      transition: opacity 0.2s ease;
     }
 
     .primary-link:hover {
@@ -116,7 +122,7 @@
 
     .icon-links {
       display: grid;
-      gap: 0.55rem;
+      gap: 0.6rem;
     }
 
     .icon-links a {
@@ -126,7 +132,6 @@
       text-decoration: none;
       color: var(--text);
       font-size: 0.96rem;
-      padding: 0.15rem 0;
     }
 
     .icon-links a span {
@@ -149,29 +154,49 @@
     }
 
     .card {
-      background: var(--card);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
       padding: 1.35rem 1.45rem;
     }
 
-    .about-text p {
+    .card + .card {
+      margin-top: 1rem;
+    }
+
+    .lead-text p,
+    .entry-text p {
       margin: 0 0 0.9rem;
       color: #2e3440;
     }
 
-    .about-text p:last-child {
+    .lead-text p:last-child,
+    .entry-text p:last-child {
       margin-bottom: 0;
     }
 
-    .project-card + .project-card {
-      margin-top: 1rem;
-    }
-
-    .project-title {
+    .entry-title {
       font-size: 1.08rem;
       font-weight: 700;
-      margin: 0 0 0.45rem;
+      margin: 0 0 0.3rem;
+    }
+
+    .entry-meta {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .entry-list {
+      margin: 0;
+      padding-left: 1.1rem;
+      color: #374151;
+    }
+
+    .entry-list li + li {
+      margin-top: 0.45rem;
+    }
+
+    .project-card + .project-card,
+    .experience-card + .experience-card {
+      margin-top: 1rem;
     }
 
     .project-desc {
@@ -183,13 +208,14 @@
       display: flex;
       flex-wrap: wrap;
       gap: 0.45rem;
-      margin-bottom: 0.9rem;
+      margin-top: 0.1rem;
+      margin-bottom: 0.95rem;
     }
 
     .tech-stack span {
       display: inline-flex;
       align-items: center;
-      padding: 0.28rem 0.6rem;
+      padding: 0.3rem 0.62rem;
       border-radius: 999px;
       background: #f3f4f6;
       border: 1px solid var(--border);
@@ -209,34 +235,26 @@
       align-items: center;
       gap: 0.45rem;
       font-size: 0.88rem;
-      padding: 0.45rem 0.7rem;
+      padding: 0.48rem 0.75rem;
       border-radius: 8px;
       border: 1px solid #d1d5db;
       text-decoration: none;
       color: var(--text);
-      background: #fff;
+      background: #ffffff;
     }
 
     .project-links a:hover {
       background: var(--hover);
     }
 
-    .coursework-list {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0.7rem;
-      margin: 0;
-      padding: 0;
-      list-style: none;
+    .skills-group + .skills-group {
+      margin-top: 1rem;
     }
 
-    .coursework-list li {
-      padding: 0.7rem 0.85rem;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      background: #fafafa;
-      color: #2d3748;
-      font-size: 0.96rem;
+    .skills-label {
+      font-weight: 700;
+      margin-bottom: 0.55rem;
+      font-size: 0.98rem;
     }
 
     footer {
@@ -258,10 +276,6 @@
         position: static;
       }
 
-      .sidebar-card {
-        padding: 1rem;
-      }
-
       .profile-img {
         max-width: 180px;
         margin: 0 auto 1rem;
@@ -273,17 +287,8 @@
         text-align: center;
       }
 
-      .primary-link {
-        justify-content: center;
-        width: 100%;
-      }
-
       .icon-links a {
         justify-content: center;
-      }
-
-      .coursework-list {
-        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -299,8 +304,7 @@
         <div class="subtitle">Computer Science Student</div>
         <div class="location">Birmingham, UK</div>
 
-        <!-- Change this to your updated CV filename -->
-        <a href="Abraham_Sharkey_CV.pdf" target="_blank" rel="noopener noreferrer" class="primary-link">
+        <a href="Abraham_Sharkey_Masters_CV_final.pdf" target="_blank" rel="noopener noreferrer" class="primary-link">
           <i class="fa-regular fa-file"></i>
           Download CV
         </a>
@@ -322,20 +326,48 @@
     <main>
       <section>
         <h2 class="section-title">About</h2>
-        <div class="card about-text">
+        <div class="card lead-text">
           <p>
-            Computer Science undergraduate with interests in systems, security,
-            backend development, and emerging computing technologies. I am
-            particularly interested in building reliable software and exploring
-            how secure and efficient systems are designed for real-world use.
+            I am a BSc (Hons) Computer Science student at Birmingham City University,
+            currently in my second year and expected to graduate in 2027. My academic
+            interests include systems, security, backend development, and emerging
+            computing technologies, with a growing interest in research-oriented work.
           </p>
           <p>
-            Through coursework and projects, I have developed experience in
-            database-backed applications, object-oriented software design,
-            IoT-style systems, and computer-vision-based prototypes. I am
-            increasingly drawn to technically rigorous, research-oriented work
-            at the intersection of software, systems, and security.
+            Through coursework, technical projects, and practical development work, I
+            have built experience in software design, backend systems, databases,
+            computer vision, and IoT-style applications. I am especially interested in
+            building reliable, well-structured systems and understanding how technical
+            ideas can be applied in real-world environments.
           </p>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="section-title">Education</h2>
+        <div class="card entry-text">
+          <h3 class="entry-title">BSc (Hons) Computer Science</h3>
+          <div class="entry-meta">Birmingham City University · 2024 – 2027</div>
+          <ul class="entry-list">
+            <li>Current second-year student; expected completion May 2027.</li>
+            <li>Selected modules and subject areas include software design, backend web services, databases, computer mathematics, and networking.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="section-title">Research &amp; Technical Interests</h2>
+        <div class="card">
+          <div class="tech-stack">
+            <span>Systems</span>
+            <span>Security</span>
+            <span>Backend Development</span>
+            <span>Computer Vision</span>
+            <span>Reliable Software</span>
+            <span>Emerging Computing</span>
+            <span>Cryptography</span>
+            <span>Quantum Computing</span>
+          </div>
         </div>
       </section>
 
@@ -343,12 +375,18 @@
         <h2 class="section-title">Selected Projects</h2>
 
         <div class="card project-card">
-          <h3 class="project-title">BMW Asset Tracking MVP</h3>
+          <h3 class="entry-title">BMW Asset-Tracking MVP</h3>
+          <div class="entry-meta">2025 – Present</div>
           <p class="project-desc">
-            Computer-vision proof of concept for tracking tagged vehicles in a
-            factory-style environment using a webcam and AprilTags. Designed to
-            simulate CCTV-based logistics tracking and real-time spatial
-            monitoring for a digital-twin-style system.
+            CCTV-style asset-tracking proof of concept built using Python, OpenCV,
+            AprilTags, and webcam input. The system simulates factory-style vehicle
+            identification and tracking using tagged toy vehicles in a controlled
+            environment.
+          </p>
+          <p class="project-desc">
+            The project focused on practical computer vision, debugging, testing,
+            and iterative Git-based development, with an emphasis on reliability
+            and technically grounded system behaviour.
           </p>
           <div class="tech-stack">
             <span>Python</span>
@@ -356,78 +394,143 @@
             <span>AprilTags</span>
             <span>Computer Vision</span>
             <span>System Design</span>
+            <span>Git</span>
           </div>
           <div class="project-links">
-            <!-- Replace # with your actual repo/report/demo links -->
-            <a href="#" target="_blank" rel="noopener noreferrer">
-              <i class="fa-solid fa-code"></i> Code
-            </a>
-            <a href="#" target="_blank" rel="noopener noreferrer">
-              <i class="fa-regular fa-file-pdf"></i> Report
+            <a href="https://github.com/abrahamsharkey/bmw-asset-tracking-mvp" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-github"></i> GitHub
             </a>
           </div>
         </div>
 
         <div class="card project-card">
-          <h3 class="project-title">FlexShade — Smart Climate-Responsive Curtain System</h3>
+          <h3 class="entry-title">Procell Website Project</h3>
+          <div class="entry-meta">2025</div>
           <p class="project-desc">
-            Smart curtain prototype designed to respond to environmental
-            conditions using sensors and automation. Developed as part of an
-            innovation project with a focus on practical smart-home integration
-            and app-based control.
+            Designed and developed website structure and content for Procell with
+            a focus on clarity, usability, and professional presentation.
+          </p>
+          <p class="project-desc">
+            This project reflects my interest in clean technical communication and
+            in building user-facing systems that are simple, organised, and effective.
+          </p>
+          <div class="tech-stack">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>Web Design</span>
+            <span>Content Structuring</span>
+          </div>
+        </div>
+
+        <div class="card project-card">
+          <h3 class="entry-title">FlexShade Smart Curtain System</h3>
+          <div class="entry-meta">BCU Innovation Project · 2024 – 2025</div>
+          <p class="project-desc">
+            Smart climate-responsive curtain system combining sensors, automation,
+            and app control as part of a university innovation project.
+          </p>
+          <p class="project-desc">
+            I contributed to app development in Unity and C# from Figma wireframes
+            and supported MVP planning and presentation work as part of the wider team.
           </p>
           <div class="tech-stack">
             <span>C#</span>
             <span>Unity</span>
+            <span>Figma</span>
             <span>IoT</span>
             <span>Sensors</span>
-            <span>UI Design</span>
+            <span>MVP Development</span>
           </div>
           <div class="project-links">
             <a href="flexshade.pdf" target="_blank" rel="noopener noreferrer">
               <i class="fa-regular fa-file-pdf"></i> PDF
             </a>
             <a href="https://github.com/abrahamsharkey/flexshade" target="_blank" rel="noopener noreferrer">
-              <i class="fa-solid fa-code"></i> Code
+              <i class="fa-brands fa-github"></i> GitHub
             </a>
           </div>
         </div>
 
         <div class="card project-card">
-          <h3 class="project-title">Library Loan Management System</h3>
+          <h3 class="entry-title">Hospital Management System</h3>
+          <div class="entry-meta">2024</div>
           <p class="project-desc">
-            Backend-focused application for managing loans, returns, and
-            reservations across multiple libraries, with an emphasis on data
-            modelling, structured logic, and maintainable software design.
+            Python-based academic project for managing patient and hospital
+            records, designed with a focus on usability, data handling, and
+            clear program flow.
+          </p>
+          <p class="project-desc">
+            This project strengthened my understanding of structured programming,
+            software organisation, and handling information in a practical system.
           </p>
           <div class="tech-stack">
-            <span>Backend Development</span>
-            <span>Databases</span>
+            <span>Python</span>
             <span>Software Design</span>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/abrahamsharkey/library-loan-system" target="_blank" rel="noopener noreferrer">
-              <i class="fa-solid fa-code"></i> Code
-            </a>
+            <span>Data Handling</span>
           </div>
         </div>
       </section>
 
       <section>
-        <h2 class="section-title">Relevant Coursework</h2>
-        <div class="card">
-          <ul class="coursework-list">
-            <li>Data Structures &amp; Algorithms</li>
-            <li>Operating Systems</li>
-            <li>Computer Networks</li>
-            <li>Databases &amp; Backend Systems</li>
-            <li>Cyber Security Fundamentals</li>
-            <li>Object-Oriented Programming &amp; Software Engineering</li>
+        <h2 class="section-title">Experience</h2>
+
+        <div class="card experience-card">
+          <h3 class="entry-title">Innovation Fest, Project Presenter</h3>
+          <div class="entry-meta">2025</div>
+          <ul class="entry-list">
+            <li>Presented the FlexShade project as part of a student team, explaining the concept, MVP, and development approach.</li>
+            <li>Contributed to preparing presentation materials and communicating technical ideas clearly.</li>
+          </ul>
+        </div>
+
+        <div class="card experience-card">
+          <h3 class="entry-title">Apple Online, Game Developer</h3>
+          <div class="entry-meta">2021 – 2022</div>
+          <ul class="entry-list">
+            <li>Worked on app and game development tasks that strengthened software engineering, debugging, and practical problem-solving skills.</li>
+            <li>Gained experience across the development lifecycle in a collaborative technical environment.</li>
+          </ul>
+        </div>
+
+        <div class="card experience-card">
+          <h3 class="entry-title">AFA (Al-Faisal Football Club), Event Planner</h3>
+          <div class="entry-meta">2019 – 2020</div>
+          <ul class="entry-list">
+            <li>Volunteered in event planning and coordination, developing communication, organisation, and teamwork skills.</li>
           </ul>
         </div>
       </section>
 
-      <footer>© 2025 Abraham Sharkey</footer>
+      <section>
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="card">
+          <div class="skills-group">
+            <div class="skills-label">Programming</div>
+            <div class="tech-stack">
+              <span>Python</span>
+              <span>Java</span>
+              <span>C++</span>
+              <span>C#</span>
+              <span>SQL</span>
+            </div>
+          </div>
+
+          <div class="skills-group">
+            <div class="skills-label">Tools</div>
+            <div class="tech-stack">
+              <span>Git</span>
+              <span>GitHub</span>
+              <span>Docker</span>
+              <span>VS Code</span>
+              <span>OpenCV</span>
+              <span>Unity</span>
+              <span>Figma</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer>© 2026 Abraham Sharkey</footer>
     </main>
   </div>
 </body>
