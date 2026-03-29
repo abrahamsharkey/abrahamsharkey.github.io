@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Abraham Sharkey | Computer Science</title>
 
-  <!-- Font Awesome -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -26,10 +25,10 @@
       padding: 3rem 2rem;
       display: grid;
       grid-template-columns: 260px 1fr;
-      gap: 3rem;
+      gap: 3.5rem;
+      align-items: start;
     }
 
-    /* Sidebar */
     .sidebar {
       position: sticky;
       top: 2rem;
@@ -38,7 +37,10 @@
 
     .sidebar-header {
       display: block;
-      margin-bottom: 2rem;
+      background: #fff;
+      border-radius: 16px;
+      padding: 1.2rem;
+      box-shadow: 0 0 0 1px #e6e8eb;
     }
 
     .profile-img {
@@ -48,24 +50,26 @@
       object-fit: cover;
       border-radius: 16px;
       background: #ccc;
-      margin-bottom: 1.2rem;
+      margin-bottom: 1rem;
     }
 
     .name {
       font-size: 1.5rem;
-      font-weight: 600;
-      margin-bottom: 0.2rem;
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 0.4rem;
     }
 
     .subtitle {
       color: #555;
-      margin-bottom: 0.2rem;
+      margin-bottom: 0.25rem;
+      font-size: 1rem;
     }
 
     .location {
       color: #777;
-      font-size: 0.9rem;
-      margin-bottom: 0.8rem;
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
     }
 
     .icon-links a {
@@ -74,8 +78,8 @@
       gap: 0.6rem;
       text-decoration: none;
       color: #111;
-      font-size: 0.95rem;
-      margin-bottom: 0.5rem;
+      font-size: 0.98rem;
+      margin-bottom: 0.6rem;
     }
 
     .icon-links a span {
@@ -86,73 +90,119 @@
       text-decoration: underline;
     }
 
-    /* Main content */
-    section {
-      margin-bottom: 2.5rem;
+    main section {
+      margin-bottom: 3rem;
     }
 
     h2 {
-      margin-bottom: 1rem;
-      font-size: 1.4rem;
+      font-size: 1.9rem;
+      line-height: 1.15;
+      margin: 0 0 1rem;
+      color: #333;
     }
 
-    .card {
-      background: #fff;
-      border-radius: 14px;
-      padding: 1.4rem 1.6rem;
-      box-shadow: 0 0 0 1px #e6e8eb;
-    }
-
-    .card + .card {
-      margin-top: 1.2rem;
-    }
-
-    .card strong {
-      font-size: 1.05rem;
-    }
-
-    .card span {
-      display: block;
-      margin-top: 0.4rem;
+    .body-text p {
+      margin: 0 0 1rem;
       color: #444;
-      line-height: 1.5;
+      line-height: 1.7;
+      font-size: 1.02rem;
     }
 
-    .pub-links {
-      margin-top: 0.8rem;
+    .entry {
+      padding: 0.15rem 0 1.35rem;
+    }
+
+    .entry + .entry {
+      border-top: 1px solid #e6e8eb;
+      padding-top: 1.35rem;
+    }
+
+    .entry-header {
       display: flex;
-      gap: 0.8rem;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
       flex-wrap: wrap;
+      margin-bottom: 0.2rem;
     }
 
-    .pub-links a {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      font-size: 0.85rem;
-      padding: 0.35rem 0.6rem;
-      border-radius: 6px;
-      border: 1px solid #d0d4d9;
+    .entry-title {
+      margin: 0;
+      font-size: 1.15rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: #222;
+    }
+
+    .entry-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+    }
+
+    .entry-links a {
       text-decoration: none;
-      color: #111;
-      background: #fff;
+      color: #555;
+      font-size: 0.95rem;
+      white-space: nowrap;
     }
 
-    .pub-links a:hover {
-      background: #f2f3f5;
+    .entry-links a:hover {
+      text-decoration: underline;
+    }
+
+    .entry-meta {
+      color: #666;
+      font-size: 0.97rem;
+      margin-bottom: 0.55rem;
+    }
+
+    .entry p {
+      margin: 0.45rem 0 0;
+      color: #444;
+      line-height: 1.65;
+      font-size: 1rem;
+    }
+
+    .simple-list {
+      margin: 0.3rem 0 0 1.2rem;
+      padding: 0;
+      color: #444;
+      line-height: 1.7;
+      font-size: 1rem;
+    }
+
+    .simple-list li + li {
+      margin-top: 0.35rem;
+    }
+
+    .skill-group + .skill-group {
+      margin-top: 1rem;
+    }
+
+    .skill-label {
+      font-weight: 700;
+      color: #222;
+      margin-bottom: 0.2rem;
+    }
+
+    .skill-text {
+      color: #444;
+      line-height: 1.7;
     }
 
     footer {
-      text-align: center;
-      color: #777;
-      font-size: 0.85rem;
+      text-align: left;
+      color: #888;
+      font-size: 0.9rem;
       margin-top: 4rem;
     }
 
-    /* Mobile */
     @media (max-width: 900px) {
       .container {
         grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 2rem 1.25rem;
       }
 
       .sidebar {
@@ -162,12 +212,11 @@
       .sidebar-header {
         display: flex;
         align-items: stretch;
-        gap: 1.2rem;
-        margin-bottom: 1rem;
+        gap: 1rem;
       }
 
       .profile-img {
-        width: 140px;
+        width: 135px;
         margin-bottom: 0;
         flex-shrink: 0;
       }
@@ -177,13 +226,27 @@
         flex-direction: column;
         justify-content: space-between;
       }
+
+      h2 {
+        font-size: 1.6rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .sidebar-header {
+        display: block;
+      }
+
+      .profile-img {
+        width: 100%;
+        margin-bottom: 1rem;
+      }
     }
   </style>
 </head>
 
 <body>
   <div class="container">
-    <!-- Sidebar -->
     <aside class="sidebar">
       <div class="sidebar-header">
         <img src="profile.png" alt="Profile photo" class="profile-img" />
@@ -211,147 +274,179 @@
       </div>
     </aside>
 
-    <!-- Main content -->
     <main>
       <section>
         <h2>About</h2>
-        <div class="card">
-          <span>
+        <div class="body-text">
+          <p>
             I am a BSc (Hons) Computer Science student at Birmingham City University,
             currently in my second year and expected to graduate in 2027.
-          </span>
-          <span>
+          </p>
+          <p>
             My interests include systems, security, backend development, computer vision,
             and emerging computing technologies. I am especially interested in building
-            reliable software and in exploring research-oriented work connected to real-world systems.
-          </span>
+            reliable software and exploring research-oriented work connected to real-world systems.
+          </p>
         </div>
       </section>
 
       <section>
         <h2>Education</h2>
-        <div class="card">
-          <strong>BSc (Hons) Computer Science</strong>
-          <span>Birmingham City University | 2024 - 2027</span>
-          <span>Current second-year student. Expected completion: May 2027.</span>
-          <span>
+        <div class="entry">
+          <div class="entry-header">
+            <h3 class="entry-title">BSc (Hons) Computer Science</h3>
+          </div>
+          <div class="entry-meta">Birmingham City University, 2024 - 2027</div>
+          <p>Current second-year student. Expected completion: May 2027.</p>
+          <p>
             Relevant areas include software design, backend web services, databases,
             networking, and computer mathematics.
-          </span>
+          </p>
         </div>
       </section>
 
       <section>
-        <h2>Research & Technical Interests</h2>
-        <div class="card">
-          <span>Systems and reliable software</span>
-          <span>Cyber security and cryptography</span>
-          <span>Backend development and databases</span>
-          <span>Computer vision and practical software systems</span>
-          <span>Quantum computing and emerging technologies</span>
-        </div>
+        <h2>Research and Technical Interests</h2>
+        <ul class="simple-list">
+          <li>Systems and reliable software</li>
+          <li>Cyber security and cryptography</li>
+          <li>Backend development and databases</li>
+          <li>Computer vision and practical software systems</li>
+          <li>Quantum computing and emerging technologies</li>
+        </ul>
       </section>
 
       <section>
         <h2>Selected Projects</h2>
 
-        <div class="card">
-          <strong>BMW Asset-Tracking MVP</strong>
-          <span>
-            CCTV-style asset-tracking proof of concept built using Python, OpenCV,
+        <div class="entry">
+          <div class="entry-header">
+            <h3 class="entry-title">BMW Asset Tracking MVP</h3>
+            <div class="entry-links">
+              <a href="https://github.com/abrahamsharkey/bmw-asset-tracking-mvp" target="_blank">
+                <i class="fa-solid fa-code"></i> Code
+              </a>
+            </div>
+          </div>
+          <div class="entry-meta">Python, OpenCV, AprilTags, Computer Vision</div>
+          <p>
+            CCTV-style asset tracking proof of concept built using Python, OpenCV,
             AprilTags, and webcam input. The system simulates factory-style vehicle
             identification and tracking in a controlled environment.
-          </span>
-          <span>
+          </p>
+          <p>
             This project focused on practical computer vision, debugging, testing,
             and iterative Git-based development, with an emphasis on technically grounded system behaviour.
-          </span>
-          <div class="pub-links">
-            <a href="https://github.com/abrahamsharkey/bmw-asset-tracking-mvp" target="_blank">
-              <i class="fa-solid fa-code"></i> Code
-            </a>
-          </div>
+          </p>
         </div>
 
-        <div class="card">
-          <strong>FlexShade Smart Curtain System</strong>
-          <span>
+        <div class="entry">
+          <div class="entry-header">
+            <h3 class="entry-title">FlexShade Smart Curtain System</h3>
+            <div class="entry-links">
+              <a href="flexshade.pdf" target="_blank">
+                <i class="fa-regular fa-file-pdf"></i> PDF
+              </a>
+              <a href="https://github.com/abrahamsharkey/flexshade" target="_blank">
+                <i class="fa-solid fa-code"></i> Code
+              </a>
+            </div>
+          </div>
+          <div class="entry-meta">C#, Unity, Figma, IoT, Sensors</div>
+          <p>
             Smart climate-responsive curtain system combining sensors, automation,
             and app control as part of a university innovation project.
-          </span>
-          <span>
+          </p>
+          <p>
             I contributed to app development in Unity and C# from Figma wireframes
             and supported MVP planning and presentation work as part of the wider team.
-          </span>
-          <div class="pub-links">
-            <a href="flexshade.pdf" target="_blank">
-              <i class="fa-regular fa-file-pdf"></i> PDF
-            </a>
-            <a href="https://github.com/abrahamsharkey/flexshade" target="_blank">
-              <i class="fa-solid fa-code"></i> Code
-            </a>
-          </div>
+          </p>
         </div>
 
-        <div class="card">
-          <strong>Procell Website Project</strong>
-          <span>
+        <div class="entry">
+          <div class="entry-header">
+            <h3 class="entry-title">Procell Website Project</h3>
+          </div>
+          <div class="entry-meta">HTML, CSS, Web Design</div>
+          <p>
             Website project focused on designing and developing structure and content
             for Procell, with attention to clarity, usability, and professional presentation.
-          </span>
-          <span>
+          </p>
+          <p>
             This project reflects my interest in clean technical communication and
             building user-facing systems that are simple, organised, and effective.
-          </span>
+          </p>
         </div>
 
-        <div class="card">
-          <strong>Hospital Management System</strong>
-          <span>
+        <div class="entry">
+          <div class="entry-header">
+            <h3 class="entry-title">Hospital Management System</h3>
+          </div>
+          <div class="entry-meta">Python, Software Design, Data Handling</div>
+          <p>
             Python-based academic project for managing patient and hospital records,
             designed with a focus on usability, structured logic, and clear program flow.
-          </span>
-          <span>
+          </p>
+          <p>
             This project helped strengthen my understanding of software organisation,
             data handling, and practical system design.
-          </span>
+          </p>
         </div>
       </section>
 
       <section>
         <h2>Experience</h2>
 
-        <div class="card">
-          <strong>Innovation Fest, Project Presenter</strong>
-          <span>Presented the FlexShade project as part of a student team.</span>
-          <span>
-            Contributed to presentation preparation and communicating technical ideas clearly.
-          </span>
+        <div class="entry">
+          <div class="entry-header">
+            <h3 class="entry-title">Innovation Fest, Project Presenter</h3>
+          </div>
+          <div class="entry-meta">2025</div>
+          <p>
+            Presented the FlexShade project as part of a student team and contributed
+            to presentation preparation and communicating technical ideas clearly.
+          </p>
         </div>
 
-        <div class="card">
-          <strong>Apple Online, Game Developer</strong>
-          <span>
+        <div class="entry">
+          <div class="entry-header">
+            <h3 class="entry-title">Apple Online, Game Developer</h3>
+          </div>
+          <div class="entry-meta">2021 - 2022</div>
+          <p>
             Worked on app and game development tasks that strengthened software engineering,
             debugging, and practical problem-solving skills.
-          </span>
+          </p>
         </div>
 
-        <div class="card">
-          <strong>AFA (Al-Faisal Football Club), Event Planner</strong>
-          <span>
+        <div class="entry">
+          <div class="entry-header">
+            <h3 class="entry-title">AFA (Al-Faisal Football Club), Event Planner</h3>
+          </div>
+          <div class="entry-meta">2019 - 2020</div>
+          <p>
             Volunteered in event planning and coordination, developing communication,
             organisation, and teamwork skills.
-          </span>
+          </p>
         </div>
       </section>
 
       <section>
         <h2>Technical Skills</h2>
-        <div class="card">
-          <span><strong>Programming:</strong> Python, Java, C#, C++, SQL</span>
-          <span><strong>Tools:</strong> Git, GitHub, Docker, VS Code, OpenCV, Unity, Figma</span>
-          <span><strong>Strengths:</strong> Problem-solving, teamwork, project organisation</span>
+
+        <div class="skill-group">
+          <div class="skill-label">Programming</div>
+          <div class="skill-text">Python, Java, C#, C++, SQL</div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-label">Tools</div>
+          <div class="skill-text">Git, GitHub, Docker, VS Code, OpenCV, Unity, Figma</div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-label">Strengths</div>
+          <div class="skill-text">Problem-solving, teamwork, project organisation</div>
         </div>
       </section>
 
