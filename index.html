@@ -202,6 +202,41 @@
       line-height: 1.7;
     }
 
+    .project-entry {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 1.5rem;
+      padding: 0.15rem 0 1.35rem;
+      align-items: start;
+    }
+
+    .project-entry + .project-entry {
+      border-top: 1px solid #e6e8eb;
+      padding-top: 1.35rem;
+    }
+
+    .project-media {
+      width: 100%;
+    }
+
+    .project-media img,
+    .project-media video {
+      width: 100%;
+      display: block;
+      border-radius: 10px;
+      background: #e5e7eb;
+      box-shadow: 0 0 0 1px #e6e8eb;
+    }
+
+    .project-media video {
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+    }
+
+    .project-content {
+      min-width: 0;
+    }
+
     footer {
       text-align: left;
       color: #888;
@@ -240,6 +275,11 @@
 
       h2 {
         font-size: 1.6rem;
+      }
+
+      .project-entry {
+        grid-template-columns: 1fr;
+        gap: 1rem;
       }
     }
 
@@ -330,73 +370,92 @@
       <section>
         <h2>Selected Projects</h2>
 
-        <div class="entry">
-          <div class="entry-header">
-            <h3 class="entry-title">BMW Asset Tracking MVP</h3>
-            <div class="entry-links">
-              <a href="bmw-asset-tracking-report.pdf" target="_blank">
-                <i class="fa-regular fa-file-pdf"></i> PDF
-              </a>
-              <a href="https://github.com/abrahamsharkey/bmw-asset-tracking-mvp" target="_blank">
-                <i class="fa-solid fa-code"></i> Code
-              </a>
+        <div class="project-entry">
+          <div class="project-media">
+            <video controls preload="metadata">
+              <source src="bmw-demo.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+
+          <div class="project-content">
+            <div class="entry-header">
+              <h3 class="entry-title">BMW Asset Tracking MVP</h3>
+              <div class="entry-links">
+                <a href="bmw-asset-tracking-report.pdf" target="_blank">
+                  <i class="fa-regular fa-file-pdf"></i> PDF
+                </a>
+                <a href="https://github.com/abrahamsharkey/bmw-asset-tracking-mvp" target="_blank">
+                  <i class="fa-solid fa-code"></i> Code
+                </a>
+              </div>
             </div>
+            <div class="entry-meta">Python, OpenCV, AprilTags, Computer Vision</div>
+            <p>
+              CCTV-style asset tracking proof of concept built using Python, OpenCV,
+              AprilTags, and webcam input. The system simulates factory-style vehicle
+              identification and tracking in a controlled environment.
+            </p>
+            <p>
+              This project focused on practical computer vision, debugging, testing,
+              and iterative Git-based development, with an emphasis on technically grounded system behaviour.
+            </p>
           </div>
-          <div class="entry-meta">Python, OpenCV, AprilTags, Computer Vision</div>
-          <p>
-            CCTV-style asset tracking proof of concept built using Python, OpenCV,
-            AprilTags, and webcam input. The system simulates factory-style vehicle
-            identification and tracking in a controlled environment.
-          </p>
-          <p>
-            This project focused on practical computer vision, debugging, testing,
-            and iterative Git-based development, with an emphasis on technically grounded system behaviour.
-          </p>
         </div>
 
-        <div class="entry">
-          <div class="entry-header">
-            <h3 class="entry-title">FlexShade Smart Curtain System</h3>
+        <div class="project-entry">
+          <div class="project-media">
+            <img src="flexshade-preview.png" alt="FlexShade project preview" />
           </div>
-          <div class="entry-meta">C#, Unity, Figma, IoT, Sensors</div>
-          <p>
-            Smart climate-responsive curtain system combining sensors, automation,
-            and app control as part of a university innovation project.
-          </p>
-          <p>
-            I contributed to app development in Unity and C# from Figma wireframes
-            and supported MVP planning and presentation work as part of the wider team.
-          </p>
+
+          <div class="project-content">
+            <div class="entry-header">
+              <h3 class="entry-title">FlexShade Smart Curtain System</h3>
+            </div>
+            <div class="entry-meta">C#, Unity, Figma, IoT, Sensors</div>
+            <p>
+              Smart climate-responsive curtain system combining sensors, automation,
+              and app control as part of a university innovation project.
+            </p>
+            <p>
+              I contributed to app development in Unity and C# from Figma wireframes
+              and supported MVP planning and presentation work as part of the wider team.
+            </p>
+          </div>
         </div>
 
-        <div class="entry">
-          <div class="entry-header">
-            <h3 class="entry-title">Procell Website Project</h3>
+        <div class="project-entry">
+          <div class="project-content">
+            <div class="entry-header">
+              <h3 class="entry-title">Procell Website Project</h3>
+            </div>
+            <div class="entry-meta">HTML, CSS, Web Design</div>
+            <p>
+              Website project focused on designing and developing structure and content
+              for Procell, with attention to clarity, usability, and professional presentation.
+            </p>
+            <p>
+              This project reflects my interest in clean technical communication and
+              building user-facing systems that are simple, organised, and effective.
+            </p>
           </div>
-          <div class="entry-meta">HTML, CSS, Web Design</div>
-          <p>
-            Website project focused on designing and developing structure and content
-            for Procell, with attention to clarity, usability, and professional presentation.
-          </p>
-          <p>
-            This project reflects my interest in clean technical communication and
-            building user-facing systems that are simple, organised, and effective.
-          </p>
         </div>
 
-        <div class="entry">
-          <div class="entry-header">
-            <h3 class="entry-title">Hospital Management System</h3>
+        <div class="project-entry">
+          <div class="project-content">
+            <div class="entry-header">
+              <h3 class="entry-title">Hospital Management System</h3>
+            </div>
+            <div class="entry-meta">Python, Software Design, Data Handling</div>
+            <p>
+              Python-based academic project for managing patient and hospital records,
+              designed with a focus on usability, structured logic, and clear program flow.
+            </p>
+            <p>
+              This project helped strengthen my understanding of software organisation,
+              data handling, and practical system design.
+            </p>
           </div>
-          <div class="entry-meta">Python, Software Design, Data Handling</div>
-          <p>
-            Python-based academic project for managing patient and hospital records,
-            designed with a focus on usability, structured logic, and clear program flow.
-          </p>
-          <p>
-            This project helped strengthen my understanding of software organisation,
-            data handling, and practical system design.
-          </p>
         </div>
       </section>
 
