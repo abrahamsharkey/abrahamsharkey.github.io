@@ -220,7 +220,6 @@
     }
 
     .project-media img,
-    .project-media video,
     .project-placeholder {
       width: 100%;
       display: block;
@@ -230,9 +229,19 @@
       aspect-ratio: 16 / 10;
     }
 
-    .project-media img,
-    .project-media video {
+    .project-media img {
       object-fit: cover;
+    }
+
+    .project-media video {
+      width: 100%;
+      display: block;
+      border-radius: 10px;
+      background: #000;
+      box-shadow: 0 0 0 1px #e6e8eb;
+      object-fit: contain;
+      height: auto;
+      max-height: 240px;
     }
 
     .project-placeholder {
@@ -309,6 +318,10 @@
         grid-template-columns: 1fr;
         gap: 1rem;
       }
+
+      .project-media video {
+        max-height: none;
+      }
     }
 
     @media (max-width: 600px) {
@@ -336,7 +349,7 @@
           <div class="location">Birmingham, UK</div>
 
           <div class="icon-links">
-            <a href="Abraham_Sharkey_Masters_CV_final.pdf" target="_blank">
+            <a href="resume.pdf" target="_blank">
               <i class="fa-regular fa-file"></i><span>CV</span>
             </a>
             <a href="https://github.com/abrahamsharkey" target="_blank">
@@ -362,9 +375,15 @@
             currently in my second year and expected to graduate in 2027.
           </p>
           <p>
-            My interests include systems, security, backend development, computer vision,
-            and emerging computing technologies. I am especially interested in building
-            reliable software and exploring research-oriented work connected to real-world systems.
+            My main interests are in systems, reliable software, backend development,
+            and practical engineering-oriented software design. I am especially interested
+            in building real-world technical systems and in applying software to structured,
+            reliability-focused environments.
+          </p>
+          <p>
+            I am also interested in emerging areas such as cryptography and quantum computing,
+            although my current main focus is on practical software systems, engineering-oriented
+            development, and reliable system design.
           </p>
         </div>
       </section>
@@ -387,11 +406,10 @@
       <section>
         <h2>Research and Technical Interests</h2>
         <ul class="simple-list">
-          <li>Systems and reliable software</li>
-          <li>Cyber security and cryptography</li>
-          <li>Backend development and databases</li>
-          <li>Computer vision and practical software systems</li>
-          <li>Quantum computing and emerging technologies</li>
+          <li>Systems engineering and reliable software</li>
+          <li>Backend systems and databases</li>
+          <li>Computer vision and sensing-based software systems</li>
+          <li>Engineering-focused software design</li>
         </ul>
       </section>
 
@@ -400,7 +418,7 @@
 
         <div class="project-entry">
           <div class="project-media">
-            <video controls preload="metadata">
+            <video controls preload="metadata" playsinline>
               <source src="bmw-demo.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
@@ -463,7 +481,7 @@
 
         <div class="project-entry">
           <div class="project-media">
-            <video controls preload="metadata">
+            <video controls preload="metadata" playsinline>
               <source src="library-system-demo.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
