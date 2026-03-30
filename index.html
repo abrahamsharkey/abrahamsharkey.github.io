@@ -220,17 +220,45 @@
     }
 
     .project-media img,
-    .project-media video {
+    .project-media video,
+    .project-placeholder {
       width: 100%;
       display: block;
       border-radius: 10px;
-      background: #e5e7eb;
+      background: #eceff3;
       box-shadow: 0 0 0 1px #e6e8eb;
+      aspect-ratio: 16 / 10;
     }
 
+    .project-media img,
     .project-media video {
-      aspect-ratio: 16 / 10;
       object-fit: cover;
+    }
+
+    .project-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      color: #666;
+      text-align: center;
+      padding: 1rem;
+      box-sizing: border-box;
+    }
+
+    .project-placeholder i {
+      font-size: 1.6rem;
+      color: #777;
+    }
+
+    .project-placeholder span {
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+
+    .fallback-media {
+      display: none;
     }
 
     .project-content {
@@ -405,7 +433,15 @@
 
         <div class="project-entry">
           <div class="project-media">
-            <img src="flexshade-preview.png" alt="FlexShade project preview" />
+            <img
+              src="flexshade-preview.png"
+              alt="FlexShade project preview"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+            />
+            <div class="project-placeholder fallback-media">
+              <i class="fa-regular fa-image"></i>
+              <span>FlexShade preview</span>
+            </div>
           </div>
 
           <div class="project-content">
@@ -425,6 +461,13 @@
         </div>
 
         <div class="project-entry">
+          <div class="project-media">
+            <div class="project-placeholder">
+              <i class="fa-solid fa-globe"></i>
+              <span>Website project</span>
+            </div>
+          </div>
+
           <div class="project-content">
             <div class="entry-header">
               <h3 class="entry-title">Procell Website Project</h3>
@@ -442,6 +485,13 @@
         </div>
 
         <div class="project-entry">
+          <div class="project-media">
+            <div class="project-placeholder">
+              <i class="fa-solid fa-hospital"></i>
+              <span>System design project</span>
+            </div>
+          </div>
+
           <div class="project-content">
             <div class="entry-header">
               <h3 class="entry-title">Hospital Management System</h3>
