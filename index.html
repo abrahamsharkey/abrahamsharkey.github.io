@@ -141,27 +141,6 @@
       color: #222;
     }
 
-    .entry-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.9rem;
-    }
-
-    .entry-links a {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      width: fit-content;
-      text-decoration: none;
-      color: #555;
-      font-size: 0.95rem;
-      white-space: nowrap;
-    }
-
-    .entry-links a:hover {
-      text-decoration: underline;
-    }
-
     .entry-meta {
       color: #666;
       font-size: 0.97rem;
@@ -206,13 +185,13 @@
       display: grid;
       grid-template-columns: 220px 1fr;
       gap: 1.5rem;
-      padding: 0.15rem 0 1.35rem;
+      padding: 0.2rem 0 1.5rem;
       align-items: start;
     }
 
     .project-entry + .project-entry {
       border-top: 1px solid #e6e8eb;
-      padding-top: 1.35rem;
+      padding-top: 1.5rem;
     }
 
     .project-media {
@@ -272,6 +251,48 @@
 
     .project-content {
       min-width: 0;
+    }
+
+    .project-title {
+      margin: 0 0 0.25rem;
+      font-size: 1.15rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: #222;
+    }
+
+    .project-meta {
+      color: #666;
+      font-size: 0.97rem;
+      margin-bottom: 0.55rem;
+    }
+
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .project-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      text-decoration: none;
+      color: #555;
+      font-size: 0.95rem;
+      white-space: nowrap;
+    }
+
+    .project-links a:hover {
+      text-decoration: underline;
+    }
+
+    .project-content p {
+      margin: 0.45rem 0 0;
+      color: #444;
+      line-height: 1.65;
+      font-size: 1rem;
     }
 
     footer {
@@ -425,18 +446,16 @@
           </div>
 
           <div class="project-content">
-            <div class="entry-header">
-              <h3 class="entry-title">BMW Asset Tracking MVP</h3>
-              <div class="entry-links">
-                <a href="bmw-asset-tracking-report.pdf" target="_blank">
-                  <i class="fa-regular fa-file-pdf"></i> PDF
-                </a>
-                <a href="https://github.com/abrahamsharkey/bmw-asset-tracking-mvp" target="_blank">
-                  <i class="fa-solid fa-code"></i> Code
-                </a>
-              </div>
+            <h3 class="project-title">BMW Asset Tracking MVP</h3>
+            <div class="project-meta">Python, OpenCV, AprilTags, Computer Vision</div>
+            <div class="project-links">
+              <a href="bmw-asset-tracking-report.pdf" target="_blank">
+                <i class="fa-regular fa-file-pdf"></i> PDF
+              </a>
+              <a href="https://github.com/abrahamsharkey/bmw-asset-tracking-mvp" target="_blank">
+                <i class="fa-solid fa-code"></i> Code
+              </a>
             </div>
-            <div class="entry-meta">Python, OpenCV, AprilTags, Computer Vision</div>
             <p>
               A computer vision MVP created to simulate CCTV-based vehicle tracking in a factory-style environment.
               Using a webcam and AprilTags, the system detects and identifies toy vehicles in real time as a proof
@@ -463,10 +482,8 @@
           </div>
 
           <div class="project-content">
-            <div class="entry-header">
-              <h3 class="entry-title">FlexShade Smart Curtain System</h3>
-            </div>
-            <div class="entry-meta">CAD, Product Design, System Integration</div>
+            <h3 class="project-title">FlexShade Smart Curtain System</h3>
+            <div class="project-meta">CAD, Product Design, System Integration</div>
             <p>
               A smart curtain system concept developed for a university innovation project. My work focused mainly
               on CAD design, idea development, and connecting the overall system by planning how the physical
@@ -488,18 +505,16 @@
           </div>
 
           <div class="project-content">
-            <div class="entry-header">
-              <h3 class="entry-title">Multi-Branch Library Management System</h3>
-              <div class="entry-links">
-                <a href="library-system-report.pdf" target="_blank">
-                  <i class="fa-regular fa-file-pdf"></i> PDF
-                </a>
-                <a href="https://github.com/abrahamsharkey/cmp5387-library-system.git" target="_blank">
-                  <i class="fa-solid fa-code"></i> Code
-                </a>
-              </div>
+            <h3 class="project-title">Multi-Branch Library Management System</h3>
+            <div class="project-meta">Java, REST API, SQL, Backend Development</div>
+            <div class="project-links">
+              <a href="library-system-report.pdf" target="_blank">
+                <i class="fa-regular fa-file-pdf"></i> PDF
+              </a>
+              <a href="https://github.com/abrahamsharkey/cmp5387-library-system.git" target="_blank">
+                <i class="fa-solid fa-code"></i> Code
+              </a>
             </div>
-            <div class="entry-meta">Java, REST API, SQL, Backend Development</div>
             <p>
               A backend-driven library management system designed to handle books, members, borrowing,
               reservations, and branch operations within a structured multi-branch environment. The project
