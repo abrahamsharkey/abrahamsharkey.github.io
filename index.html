@@ -205,11 +205,20 @@
       object-fit: cover;
     }
 
-    .project-media .app-screenshot {
-      width: min(100%, 180px);
-      margin: 0 auto;
-      aspect-ratio: 9 / 19.5;
-      object-position: top;
+    .project-media-gallery {
+      display: grid;
+      gap: 0.65rem;
+    }
+
+    .project-media-gallery a {
+      display: block;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .project-media-gallery img {
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
       background: #e4e7eb;
     }
 
@@ -232,12 +241,6 @@
 
     .project-placeholder {
       color: #666;
-    }
-
-    .project-placeholder.app-placeholder {
-      width: min(100%, 180px);
-      margin: 0 auto;
-      aspect-ratio: 9 / 19.5;
     }
 
     .project-placeholder i {
@@ -435,19 +438,32 @@
       </section>
 
       <section>
-        <h2>Independent iOS Applications</h2>
+        <h2>Independent iOS Application</h2>
 
         <div class="project-entry">
-          <div class="project-media">
-            <img
-              src="duesoon-main.png"
-              alt="DueSoon deadline-tracking app interface"
-              class="app-screenshot"
-              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-            />
-            <div class="project-placeholder app-placeholder fallback-media">
+          <div class="project-media project-media-gallery">
+            <a href="duesoon_main.png" target="_blank" rel="noopener" aria-label="Open the DueSoon main image">
+              <img
+                src="duesoon_main.png"
+                alt="DueSoon app main promotional view"
+                onerror="this.style.display='none'; this.parentElement.nextElementSibling.style.display='flex';"
+              />
+            </a>
+            <div class="project-placeholder fallback-media">
               <i class="fa-regular fa-image"></i>
-              <span>Upload: duesoon-main.png</span>
+              <span>Upload: duesoon_main.png</span>
+            </div>
+
+            <a href="duesoon_all_screens.png" target="_blank" rel="noopener" aria-label="Open the DueSoon all-screens image">
+              <img
+                src="duesoon_all_screens.png"
+                alt="Overview of all DueSoon app screens"
+                onerror="this.style.display='none'; this.parentElement.nextElementSibling.style.display='flex';"
+              />
+            </a>
+            <div class="project-placeholder fallback-media">
+              <i class="fa-regular fa-images"></i>
+              <span>Upload: duesoon_all_screens.png</span>
             </div>
           </div>
 
@@ -456,10 +472,7 @@
             <div class="project-meta">Swift, SwiftUI, Xcode · Final Polishing</div>
             <div class="project-links">
               <a href="https://github.com/abrahamsharkey/DueSoon" target="_blank" rel="noopener">
-                <i class="fa-brands fa-github"></i> GitHub
-              </a>
-              <a href="duesoon-wireframe.png" target="_blank" rel="noopener">
-                <i class="fa-solid fa-pencil-ruler"></i> Wireframe
+                <i class="fa-solid fa-code"></i> Code
               </a>
             </div>
             <p>
@@ -473,74 +486,6 @@
           </div>
         </div>
 
-        <div class="project-entry">
-          <div class="project-media">
-            <img
-              src="slip-main.png"
-              alt="Slip receipt and spending app interface"
-              class="app-screenshot"
-              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-            />
-            <div class="project-placeholder app-placeholder fallback-media">
-              <i class="fa-regular fa-image"></i>
-              <span>Upload: slip-main.png</span>
-            </div>
-          </div>
-
-          <div class="project-content">
-            <h3 class="project-title">Slip</h3>
-            <div class="project-meta">Swift, SwiftUI, Personal Finance · In Development</div>
-            <div class="project-links">
-              <a href="https://github.com/abrahamsharkey/Slip" target="_blank" rel="noopener">
-                <i class="fa-brands fa-github"></i> GitHub
-              </a>
-              <a href="slip-wireframe.png" target="_blank" rel="noopener">
-                <i class="fa-solid fa-pencil-ruler"></i> Wireframe
-              </a>
-            </div>
-            <p>
-              Receipt and personal-spending application designed to capture, organise and find
-              receipts in one place. The product concept and interface direction are complete, and
-              I am developing the SwiftUI application while refining its UI and user experience.
-            </p>
-            <p>
-              Matching receipts with bank transaction data is a planned extension and is not yet implemented.
-            </p>
-          </div>
-        </div>
-
-        <div class="project-entry">
-          <div class="project-media">
-            <img
-              src="nextset-main.png"
-              alt="NextSet workout and rest-timer app interface"
-              class="app-screenshot"
-              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-            />
-            <div class="project-placeholder app-placeholder fallback-media">
-              <i class="fa-regular fa-image"></i>
-              <span>Upload: nextset-main.png</span>
-            </div>
-          </div>
-
-          <div class="project-content">
-            <h3 class="project-title">NextSet</h3>
-            <div class="project-meta">Swift, SwiftUI, Xcode · Personal Application</div>
-            <div class="project-links">
-              <a href="https://github.com/abrahamsharkey/NextSet" target="_blank" rel="noopener">
-                <i class="fa-brands fa-github"></i> GitHub
-              </a>
-            </div>
-            <p>
-              Working personal application built around my own gym routine, combining workout
-              selection, set progression and automatic rest timing in a minimal interface designed
-              for quick use between sets.
-            </p>
-            <p>
-              The next step is to let other users create, edit and save their own workout routines.
-            </p>
-          </div>
-        </div>
       </section>
 
       <section>
@@ -548,8 +493,8 @@
 
         <div class="project-entry">
           <div class="project-media">
-            <video controls preload="metadata" playsinline>
-              <source src="MVP_DemoVideo.mp4" type="video/mp4" />
+            <video controls preload="metadata" playsinline poster="bmw_pitch_poster.png">
+              <source src="bmw_presentation.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
@@ -561,8 +506,8 @@
               <a href="CMP5354_D2_BMW_HamsHall_Abraham_Sharkey.pdf" target="_blank" rel="noopener">
                 <i class="fa-regular fa-file-pdf"></i> Report
               </a>
-              <a href="bmw_presentation.mp4" target="_blank" rel="noopener">
-                <i class="fa-regular fa-circle-play"></i> Pitch video
+              <a href="MVP_DemoVideo.mp4" target="_blank" rel="noopener">
+                <i class="fa-regular fa-circle-play"></i> Demo
               </a>
               <a href="https://github.com/abrahamsharkey/bmw-asset-tracking-mvp" target="_blank" rel="noopener">
                 <i class="fa-solid fa-code"></i> Code
@@ -590,18 +535,20 @@
 
           <div class="project-content">
             <h3 class="project-title">Multi-Branch Library System</h3>
-            <div class="project-meta">Java, REST API, SQL, Backend Development</div>
+            <div class="project-meta">Java, REST API, SQL, Backend Development · Group Project</div>
             <div class="project-links">
               <a href="library-system-report.pdf" target="_blank" rel="noopener">
-                <i class="fa-regular fa-file-pdf"></i> PDF
+                <i class="fa-regular fa-file-pdf"></i> Report
               </a>
               <a href="https://github.com/abrahamsharkey/cmp5387-library-system" target="_blank" rel="noopener">
                 <i class="fa-solid fa-code"></i> Code
               </a>
             </div>
             <p>
-              Developed a Java REST API and SQL-backed system with a layered backend structure for
-              multi-branch book, member and loan operations.
+              Developed as a team, this project delivered a Java REST API and SQL-backed system
+              with a layered backend structure for multi-branch book, member and loan operations.
+              My individual contributions and teamwork are identified and accredited in the
+              report, source code and demonstration video.
             </p>
           </div>
         </div>
@@ -624,7 +571,7 @@
             <div class="project-meta">CAD, Product Design, System Integration</div>
             <div class="project-links">
               <a href="flexshade-report.pdf" target="_blank" rel="noopener">
-                <i class="fa-regular fa-file-pdf"></i> PDF
+                <i class="fa-regular fa-file-pdf"></i> Report
               </a>
               <a href="flexshade-poster.pdf" target="_blank" rel="noopener">
                 <i class="fa-regular fa-file-lines"></i> Poster
