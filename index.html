@@ -205,23 +205,6 @@
       object-fit: cover;
     }
 
-    .project-media-gallery {
-      display: grid;
-      gap: 0.65rem;
-    }
-
-    .project-media-gallery a {
-      display: block;
-      border-radius: 10px;
-      overflow: hidden;
-    }
-
-    .project-media-gallery img {
-      aspect-ratio: 16 / 10;
-      object-fit: cover;
-      background: #e4e7eb;
-    }
-
     .project-media video {
       background: #000;
       object-fit: contain;
@@ -441,7 +424,7 @@
         <h2>Independent iOS Application</h2>
 
         <div class="project-entry">
-          <div class="project-media project-media-gallery">
+          <div class="project-media">
             <a href="duesoon_main.png" target="_blank" rel="noopener" aria-label="Open the DueSoon main image">
               <img
                 src="duesoon_main.png"
@@ -453,18 +436,6 @@
               <i class="fa-regular fa-image"></i>
               <span>Upload: duesoon_main.png</span>
             </div>
-
-            <a href="duesoon_all_screens.png" target="_blank" rel="noopener" aria-label="Open the DueSoon all-screens image">
-              <img
-                src="duesoon_all_screens.png"
-                alt="Overview of all DueSoon app screens"
-                onerror="this.style.display='none'; this.parentElement.nextElementSibling.style.display='flex';"
-              />
-            </a>
-            <div class="project-placeholder fallback-media">
-              <i class="fa-regular fa-images"></i>
-              <span>Upload: duesoon_all_screens.png</span>
-            </div>
           </div>
 
           <div class="project-content">
@@ -473,6 +444,9 @@
             <div class="project-links">
               <a href="https://github.com/abrahamsharkey/DueSoon" target="_blank" rel="noopener">
                 <i class="fa-solid fa-code"></i> Code
+              </a>
+              <a href="duesoon_all_screens.png" target="_blank" rel="noopener">
+                <i class="fa-regular fa-images"></i> All Screens
               </a>
             </div>
             <p>
