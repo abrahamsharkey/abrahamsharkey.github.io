@@ -3,6 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Portfolio of Abraham Sharkey, a Computer Science student developing reliable software systems, backend projects and iOS applications."
+  />
   <title>Abraham Sharkey | Computer Science</title>
 
   <link
@@ -89,10 +93,6 @@
       margin-bottom: 0.6rem;
     }
 
-    .icon-links a span {
-      text-decoration: none;
-    }
-
     .icon-links a:hover span {
       text-decoration: underline;
     }
@@ -124,15 +124,6 @@
       padding-top: 1.35rem;
     }
 
-    .entry-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 1rem;
-      flex-wrap: wrap;
-      margin-bottom: 0.2rem;
-    }
-
     .entry-title {
       margin: 0;
       font-size: 1.15rem;
@@ -144,7 +135,7 @@
     .entry-meta {
       color: #666;
       font-size: 0.97rem;
-      margin-bottom: 0.55rem;
+      margin: 0.2rem 0 0.55rem;
     }
 
     .entry p {
@@ -199,25 +190,31 @@
     }
 
     .project-media img,
+    .project-media video,
     .project-placeholder {
       width: 100%;
       display: block;
       border-radius: 10px;
       background: #eceff3;
-      box-shadow: 0 0 0 1px #e6e8eb;
+      box-shadow: 0 0 0 1px #e1e4e8;
       aspect-ratio: 16 / 10;
+      box-sizing: border-box;
     }
 
     .project-media img {
       object-fit: cover;
     }
 
+    .project-media .app-screenshot {
+      width: min(100%, 180px);
+      margin: 0 auto;
+      aspect-ratio: 9 / 19.5;
+      object-position: top;
+      background: #e4e7eb;
+    }
+
     .project-media video {
-      width: 100%;
-      display: block;
-      border-radius: 10px;
       background: #000;
-      box-shadow: 0 0 0 1px #e6e8eb;
       object-fit: contain;
       height: auto;
       max-height: 240px;
@@ -228,11 +225,19 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 0.6rem;
-      color: #666;
-      text-align: center;
+      gap: 0.55rem;
       padding: 1rem;
-      box-sizing: border-box;
+      text-align: center;
+    }
+
+    .project-placeholder {
+      color: #666;
+    }
+
+    .project-placeholder.app-placeholder {
+      width: min(100%, 180px);
+      margin: 0 auto;
+      aspect-ratio: 9 / 19.5;
     }
 
     .project-placeholder i {
@@ -362,7 +367,7 @@
   <div class="container">
     <aside class="sidebar">
       <div class="sidebar-header">
-        <img src="profile.png" alt="Profile photo" class="profile-img" />
+        <img src="profile.png" alt="Portrait of Abraham Sharkey" class="profile-img" />
 
         <div>
           <div class="name">Abraham Sharkey</div>
@@ -370,13 +375,13 @@
           <div class="location">Birmingham, UK</div>
 
           <div class="icon-links">
-            <a href="resume.pdf" target="_blank">
+            <a href="resume.pdf" target="_blank" rel="noopener">
               <i class="fa-regular fa-file"></i><span>CV</span>
             </a>
-            <a href="https://github.com/abrahamsharkey" target="_blank">
+            <a href="https://github.com/abrahamsharkey" target="_blank" rel="noopener">
               <i class="fa-brands fa-github"></i><span>GitHub</span>
             </a>
-            <a href="https://linkedin.com/in/abrahamsharkey" target="_blank">
+            <a href="https://linkedin.com/in/abrahamsharkey" target="_blank" rel="noopener">
               <i class="fa-brands fa-linkedin"></i><span>LinkedIn</span>
             </a>
             <a href="mailto:abmsharkey@gmail.com">
@@ -392,77 +397,185 @@
         <h2>About</h2>
         <div class="body-text">
           <p>
-            I am a BSc (Hons) Computer Science student at Birmingham City University,
-            currently in my second year and expected to graduate in 2027.
+            I am entering the final year of a BSc (Hons) Computer Science degree at
+            Birmingham City University and expect to graduate in 2027.
           </p>
           <p>
-            My main interests are in systems, reliable software, backend development,
-            and practical engineering-oriented software design. I am especially interested
-            in building real-world technical systems and in applying software to structured,
-            reliability-focused environments.
+            My interests centre on reliable software systems, backend development and
+            engineering-oriented software design. Alongside my academic work, I independently
+            design and develop iOS applications using Swift and SwiftUI.
           </p>
           <p>
-            I am also interested in emerging areas such as cryptography and quantum computing,
-            although my current main focus is on practical software systems, engineering-oriented
-            development, and reliable system design.
+            I enjoy turning practical problems into focused software, then improving the result
+            through repeated implementation, testing and interface refinement.
           </p>
         </div>
       </section>
 
       <section>
         <h2>Education</h2>
+
         <div class="entry">
-          <div class="entry-header">
-            <h3 class="entry-title">BSc (Hons) Computer Science</h3>
-          </div>
+          <h3 class="entry-title">BSc (Hons) Computer Science</h3>
           <div class="entry-meta">Birmingham City University, 2024 - 2027</div>
-          <p>Current second-year student. Expected completion: May 2027.</p>
           <p>
-            Relevant areas include software design, backend web services, databases,
-            networking, and computer mathematics.
+            Studying software design, object-oriented programming, backend development,
+            databases, operating systems, DevOps, cyber security and computer mathematics.
+          </p>
+        </div>
+
+        <div class="entry">
+          <h3 class="entry-title">Undergraduate Study in Software Engineering</h3>
+          <div class="entry-meta">Alfaisal University, 2019 - 2021</div>
+          <p>
+            Earlier study covering programming, object-oriented development, data structures,
+            algorithms and engineering mathematics.
           </p>
         </div>
       </section>
 
       <section>
-        <h2>Research and Technical Interests</h2>
-        <ul class="simple-list">
-          <li>Systems engineering and reliable software</li>
-          <li>Backend systems and databases</li>
-          <li>Computer vision and sensing-based software systems</li>
-          <li>Engineering-focused software design</li>
-        </ul>
+        <h2>Independent iOS Applications</h2>
+
+        <div class="project-entry">
+          <div class="project-media">
+            <img
+              src="duesoon-main.png"
+              alt="DueSoon deadline-tracking app interface"
+              class="app-screenshot"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+            />
+            <div class="project-placeholder app-placeholder fallback-media">
+              <i class="fa-regular fa-image"></i>
+              <span>Upload: duesoon-main.png</span>
+            </div>
+          </div>
+
+          <div class="project-content">
+            <h3 class="project-title">DueSoon</h3>
+            <div class="project-meta">Swift, SwiftUI, Xcode · Final Polishing</div>
+            <div class="project-links">
+              <a href="https://github.com/abrahamsharkey/DueSoon" target="_blank" rel="noopener">
+                <i class="fa-brands fa-github"></i> GitHub
+              </a>
+              <a href="duesoon-wireframe.png" target="_blank" rel="noopener">
+                <i class="fa-solid fa-pencil-ruler"></i> Wireframe
+              </a>
+            </div>
+            <p>
+              Independently designed and developed a deadline-tracking application with calendar
+              navigation, countdowns, urgency states and persistent deadline data.
+            </p>
+            <p>
+              Refined month and year navigation, deadline editing, information hierarchy and
+              interaction speed through repeated simulator and device testing.
+            </p>
+          </div>
+        </div>
+
+        <div class="project-entry">
+          <div class="project-media">
+            <img
+              src="slip-main.png"
+              alt="Slip receipt and spending app interface"
+              class="app-screenshot"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+            />
+            <div class="project-placeholder app-placeholder fallback-media">
+              <i class="fa-regular fa-image"></i>
+              <span>Upload: slip-main.png</span>
+            </div>
+          </div>
+
+          <div class="project-content">
+            <h3 class="project-title">Slip</h3>
+            <div class="project-meta">Swift, SwiftUI, Personal Finance · In Development</div>
+            <div class="project-links">
+              <a href="https://github.com/abrahamsharkey/Slip" target="_blank" rel="noopener">
+                <i class="fa-brands fa-github"></i> GitHub
+              </a>
+              <a href="slip-wireframe.png" target="_blank" rel="noopener">
+                <i class="fa-solid fa-pencil-ruler"></i> Wireframe
+              </a>
+            </div>
+            <p>
+              Receipt and personal-spending application designed to capture, organise and find
+              receipts in one place. The product concept and interface direction are complete, and
+              I am developing the SwiftUI application while refining its UI and user experience.
+            </p>
+            <p>
+              Matching receipts with bank transaction data is a planned extension and is not yet implemented.
+            </p>
+          </div>
+        </div>
+
+        <div class="project-entry">
+          <div class="project-media">
+            <img
+              src="nextset-main.png"
+              alt="NextSet workout and rest-timer app interface"
+              class="app-screenshot"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+            />
+            <div class="project-placeholder app-placeholder fallback-media">
+              <i class="fa-regular fa-image"></i>
+              <span>Upload: nextset-main.png</span>
+            </div>
+          </div>
+
+          <div class="project-content">
+            <h3 class="project-title">NextSet</h3>
+            <div class="project-meta">Swift, SwiftUI, Xcode · Personal Application</div>
+            <div class="project-links">
+              <a href="https://github.com/abrahamsharkey/NextSet" target="_blank" rel="noopener">
+                <i class="fa-brands fa-github"></i> GitHub
+              </a>
+            </div>
+            <p>
+              Working personal application built around my own gym routine, combining workout
+              selection, set progression and automatic rest timing in a minimal interface designed
+              for quick use between sets.
+            </p>
+            <p>
+              The next step is to let other users create, edit and save their own workout routines.
+            </p>
+          </div>
+        </div>
       </section>
 
       <section>
-        <h2>Selected Projects</h2>
+        <h2>Academic Systems</h2>
 
         <div class="project-entry">
           <div class="project-media">
             <video controls preload="metadata" playsinline>
-              <source src="bmw-demo.mp4" type="video/mp4" />
+              <source src="MVP_DemoVideo.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
 
           <div class="project-content">
-            <h3 class="project-title">BMW Asset Tracking MVP</h3>
+            <h3 class="project-title">BMW Asset-Tracking MVP</h3>
             <div class="project-meta">Python, OpenCV, AprilTags, Computer Vision</div>
             <div class="project-links">
-              <a href="bmw-asset-tracking-report.pdf" target="_blank">
-                <i class="fa-regular fa-file-pdf"></i> PDF
+              <a href="CMP5354_D2_BMW_HamsHall_Abraham_Sharkey.pdf" target="_blank" rel="noopener">
+                <i class="fa-regular fa-file-pdf"></i> Report
               </a>
-              <a href="https://github.com/abrahamsharkey/bmw-asset-tracking-mvp" target="_blank">
+              <a href="bmw_presentation.mp4" target="_blank" rel="noopener">
+                <i class="fa-regular fa-circle-play"></i> Pitch video
+              </a>
+              <a href="https://github.com/abrahamsharkey/bmw-asset-tracking-mvp" target="_blank" rel="noopener">
                 <i class="fa-solid fa-code"></i> Code
               </a>
             </div>
             <p>
-              Computer vision MVP created to simulate CCTV-based vehicle tracking in a factory-style
-              environment using a webcam and AprilTags.
+              Built and presented a CCTV-style tracking proof of concept using Python, OpenCV,
+              AprilTags and webcam input, improving identification reliability through iterative
+              debugging and testing.
             </p>
             <p>
-              The project focused on applied system development, testing, and debugging, with an
-              emphasis on building a realistic engineering-style prototype.
+              Collaborated through Git-based development and contributed to the system design,
+              MVP demonstration and technical presentation.
             </p>
           </div>
         </div>
@@ -476,23 +589,19 @@
           </div>
 
           <div class="project-content">
-            <h3 class="project-title">Multi-Branch Library Management System</h3>
+            <h3 class="project-title">Multi-Branch Library System</h3>
             <div class="project-meta">Java, REST API, SQL, Backend Development</div>
             <div class="project-links">
-              <a href="library-system-report.pdf" target="_blank">
+              <a href="library-system-report.pdf" target="_blank" rel="noopener">
                 <i class="fa-regular fa-file-pdf"></i> PDF
               </a>
-              <a href="https://github.com/abrahamsharkey/cmp5387-library-system.git" target="_blank">
+              <a href="https://github.com/abrahamsharkey/cmp5387-library-system" target="_blank" rel="noopener">
                 <i class="fa-solid fa-code"></i> Code
               </a>
             </div>
             <p>
-              Backend-focused library system for managing books, members, loans, reservations, and
-              branch operations across multiple locations.
-            </p>
-            <p>
-              I focused on backend implementation, database design, and creating a clear,
-              maintainable system structure.
+              Developed a Java REST API and SQL-backed system with a layered backend structure for
+              multi-branch book, member and loan operations.
             </p>
           </div>
         </div>
@@ -514,61 +623,43 @@
             <h3 class="project-title">FlexShade Smart Curtain System</h3>
             <div class="project-meta">CAD, Product Design, System Integration</div>
             <div class="project-links">
-              <a href="flexshade-report.pdf" target="_blank">
+              <a href="flexshade-report.pdf" target="_blank" rel="noopener">
                 <i class="fa-regular fa-file-pdf"></i> PDF
               </a>
-              <a href="flexshade-poster.pdf" target="_blank">
+              <a href="flexshade-poster.pdf" target="_blank" rel="noopener">
                 <i class="fa-regular fa-file-lines"></i> Poster
               </a>
-              <a href="flexshade-wireframe.png" target="_blank">
+              <a href="flexshade-wireframe.png" target="_blank" rel="noopener">
                 <i class="fa-solid fa-pencil-ruler"></i> Wireframe
               </a>
             </div>
             <p>
-              Smart curtain system concept developed for a university innovation project, with a focus
-              on CAD design, product ideas, and overall system integration.
-            </p>
-            <p>
-              My role centred on planning how the physical components, sensors, control logic, and
-              app-related elements would work together as one solution.
+              Smart-curtain system concept developed for a university innovation project, with a
+              focus on CAD design, product development and integrating physical components, sensors,
+              control logic and app-related elements into one solution.
             </p>
           </div>
         </div>
       </section>
 
       <section>
-        <h2>Experience</h2>
+        <h2>Experience and Development</h2>
 
         <div class="entry">
-          <div class="entry-header">
-            <h3 class="entry-title">Innovation Fest, Project Presenter</h3>
-          </div>
-          <div class="entry-meta">2025</div>
-          <p>
-            Presented the FlexShade project as part of a student team and contributed
-            to presentation preparation and communicating technical ideas clearly.
-          </p>
-        </div>
-
-        <div class="entry">
-          <div class="entry-header">
-            <h3 class="entry-title">Apple Online, Game Developer</h3>
-          </div>
+          <h3 class="entry-title">App and Game Developer, Apple Online</h3>
           <div class="entry-meta">2021 - 2022</div>
           <p>
-            Worked on app and game development tasks that strengthened software engineering,
-            debugging, and practical problem-solving skills.
+            Contributed to application and game-development tasks, strengthening practical debugging,
+            iterative problem-solving and collaborative development skills.
           </p>
         </div>
 
         <div class="entry">
-          <div class="entry-header">
-            <h3 class="entry-title">AFA (Al-Faisal Football Club), Event Planner</h3>
-          </div>
-          <div class="entry-meta">2019 - 2020</div>
+          <h3 class="entry-title">Additional Study</h3>
+          <div class="entry-meta">2022 - 2023</div>
           <p>
-            Volunteered in event planning and coordination, developing communication,
-            organisation, and teamwork skills.
+            AWS and The Prince's Trust Cloud Engineering Programme; Harvard CS50 Introduction to
+            Computer Science.
           </p>
         </div>
       </section>
@@ -578,17 +669,17 @@
 
         <div class="skill-group">
           <div class="skill-label">Programming</div>
-          <div class="skill-text">Python, Java, C#, C++, SQL</div>
+          <div class="skill-text">Python, Java, Swift, SQL, C++, C#, HTML, CSS and JavaScript</div>
         </div>
 
         <div class="skill-group">
-          <div class="skill-label">Tools</div>
-          <div class="skill-text">Git, GitHub, Docker, VS Code, OpenCV, Unity, Figma</div>
+          <div class="skill-label">Mobile and backend</div>
+          <div class="skill-text">SwiftUI, Xcode, REST APIs, relational database design and Docker</div>
         </div>
 
         <div class="skill-group">
-          <div class="skill-label">Strengths</div>
-          <div class="skill-text">Problem-solving, teamwork, project organisation</div>
+          <div class="skill-label">Development tools</div>
+          <div class="skill-text">Git, GitHub, OpenCV, AprilTags, VS Code, Unity and Figma</div>
         </div>
       </section>
 
